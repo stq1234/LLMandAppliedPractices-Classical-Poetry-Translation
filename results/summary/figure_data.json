@@ -1,0 +1,2149 @@
+{
+  "aggregation": "Within poem/model/condition average repetitions; bootstrap 16 poem clusters, 2000 draws.",
+  "quality": [
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "A",
+      "dimension": "meaning",
+      "mean": 4.916666666666667,
+      "low": 4.833333333333334,
+      "high": 4.979166666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "A",
+      "dimension": "imagery",
+      "mean": 4.9375,
+      "low": 4.833333333333333,
+      "high": 5.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "A",
+      "dimension": "tone",
+      "mean": 5.0,
+      "low": 5.0,
+      "high": 5.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "A",
+      "dimension": "english",
+      "mean": 4.895833333333334,
+      "low": 4.8125,
+      "high": 4.958333333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "A",
+      "dimension": "faithful_fit",
+      "mean": 4.895833333333334,
+      "low": 4.791666666666667,
+      "high": 4.979166666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "A",
+      "dimension": "poetic_fit",
+      "mean": 4.645833333333333,
+      "low": 4.479166666666666,
+      "high": 4.8125,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "B",
+      "dimension": "meaning",
+      "mean": 4.958333333333334,
+      "low": 4.895833333333334,
+      "high": 5.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "B",
+      "dimension": "imagery",
+      "mean": 4.979166666666667,
+      "low": 4.9375,
+      "high": 5.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "B",
+      "dimension": "tone",
+      "mean": 4.979166666666667,
+      "low": 4.9375,
+      "high": 5.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "B",
+      "dimension": "english",
+      "mean": 4.9375,
+      "low": 4.875,
+      "high": 5.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "B",
+      "dimension": "faithful_fit",
+      "mean": 4.958333333333334,
+      "low": 4.895833333333334,
+      "high": 5.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "B",
+      "dimension": "poetic_fit",
+      "mean": 4.645833333333334,
+      "low": 4.458333333333333,
+      "high": 4.8125,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "C",
+      "dimension": "meaning",
+      "mean": 4.979166666666667,
+      "low": 4.9375,
+      "high": 5.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "C",
+      "dimension": "imagery",
+      "mean": 4.916666666666667,
+      "low": 4.8125,
+      "high": 5.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "C",
+      "dimension": "tone",
+      "mean": 5.0,
+      "low": 5.0,
+      "high": 5.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "C",
+      "dimension": "english",
+      "mean": 4.875,
+      "low": 4.770833333333334,
+      "high": 4.958333333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "C",
+      "dimension": "faithful_fit",
+      "mean": 4.979166666666667,
+      "low": 4.9375,
+      "high": 5.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "C",
+      "dimension": "poetic_fit",
+      "mean": 4.479166666666667,
+      "low": 4.3125,
+      "high": 4.645833333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "D",
+      "dimension": "meaning",
+      "mean": 4.833333333333334,
+      "low": 4.6875,
+      "high": 4.958333333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "D",
+      "dimension": "imagery",
+      "mean": 4.854166666666667,
+      "low": 4.708333333333333,
+      "high": 4.979166666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "D",
+      "dimension": "tone",
+      "mean": 5.0,
+      "low": 5.0,
+      "high": 5.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "D",
+      "dimension": "english",
+      "mean": 4.8125,
+      "low": 4.645833333333334,
+      "high": 4.93802083333333,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "D",
+      "dimension": "faithful_fit",
+      "mean": 4.875,
+      "low": 4.770833333333334,
+      "high": 4.958333333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "D",
+      "dimension": "poetic_fit",
+      "mean": 4.729166666666666,
+      "low": 4.583333333333333,
+      "high": 4.875,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "E",
+      "dimension": "meaning",
+      "mean": 4.958333333333334,
+      "low": 4.895833333333334,
+      "high": 5.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "E",
+      "dimension": "imagery",
+      "mean": 4.958333333333334,
+      "low": 4.895833333333334,
+      "high": 5.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "E",
+      "dimension": "tone",
+      "mean": 4.9375,
+      "low": 4.8125,
+      "high": 5.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "E",
+      "dimension": "english",
+      "mean": 4.854166666666667,
+      "low": 4.6875,
+      "high": 4.979166666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "E",
+      "dimension": "faithful_fit",
+      "mean": 4.9375,
+      "low": 4.833333333333334,
+      "high": 5.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "E",
+      "dimension": "poetic_fit",
+      "mean": 4.354166666666667,
+      "low": 4.145833333333334,
+      "high": 4.541666666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "F",
+      "dimension": "meaning",
+      "mean": 4.875,
+      "low": 4.770833333333334,
+      "high": 4.958333333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "F",
+      "dimension": "imagery",
+      "mean": 4.916666666666667,
+      "low": 4.833333333333334,
+      "high": 4.979166666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "F",
+      "dimension": "tone",
+      "mean": 5.0,
+      "low": 5.0,
+      "high": 5.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "F",
+      "dimension": "english",
+      "mean": 4.604166666666667,
+      "low": 4.375,
+      "high": 4.8125,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "F",
+      "dimension": "faithful_fit",
+      "mean": 4.875,
+      "low": 4.770833333333334,
+      "high": 4.958333333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "F",
+      "dimension": "poetic_fit",
+      "mean": 4.604166666666667,
+      "low": 4.4375,
+      "high": 4.770833333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "A",
+      "dimension": "meaning",
+      "mean": 4.4375,
+      "low": 4.25,
+      "high": 4.645833333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "A",
+      "dimension": "imagery",
+      "mean": 4.395833333333333,
+      "low": 4.166666666666666,
+      "high": 4.625,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "A",
+      "dimension": "tone",
+      "mean": 4.875,
+      "low": 4.770833333333334,
+      "high": 4.958333333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "A",
+      "dimension": "english",
+      "mean": 4.666666666666667,
+      "low": 4.479166666666667,
+      "high": 4.833333333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "A",
+      "dimension": "faithful_fit",
+      "mean": 4.354166666666666,
+      "low": 4.145833333333333,
+      "high": 4.583333333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "A",
+      "dimension": "poetic_fit",
+      "mean": 4.020833333333333,
+      "low": 3.875,
+      "high": 4.1875,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "B",
+      "dimension": "meaning",
+      "mean": 4.333333333333334,
+      "low": 4.1875,
+      "high": 4.479166666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "B",
+      "dimension": "imagery",
+      "mean": 4.3125,
+      "low": 4.083333333333333,
+      "high": 4.520833333333333,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "B",
+      "dimension": "tone",
+      "mean": 4.875,
+      "low": 4.791666666666667,
+      "high": 4.958333333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "B",
+      "dimension": "english",
+      "mean": 4.6875,
+      "low": 4.541666666666667,
+      "high": 4.8125,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "B",
+      "dimension": "faithful_fit",
+      "mean": 4.229166666666667,
+      "low": 4.083333333333333,
+      "high": 4.395833333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "B",
+      "dimension": "poetic_fit",
+      "mean": 4.145833333333333,
+      "low": 3.9791666666666665,
+      "high": 4.333333333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "C",
+      "dimension": "meaning",
+      "mean": 4.541666666666666,
+      "low": 4.354166666666666,
+      "high": 4.729166666666666,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "C",
+      "dimension": "imagery",
+      "mean": 4.5,
+      "low": 4.311979166666667,
+      "high": 4.6875,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "C",
+      "dimension": "tone",
+      "mean": 4.854166666666666,
+      "low": 4.729166666666666,
+      "high": 4.958333333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "C",
+      "dimension": "english",
+      "mean": 4.791666666666667,
+      "low": 4.645833333333334,
+      "high": 4.895833333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "C",
+      "dimension": "faithful_fit",
+      "mean": 4.5,
+      "low": 4.3125,
+      "high": 4.666666666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "C",
+      "dimension": "poetic_fit",
+      "mean": 3.9791666666666665,
+      "low": 3.875,
+      "high": 4.104166666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "D",
+      "dimension": "meaning",
+      "mean": 4.166666666666666,
+      "low": 4.0,
+      "high": 4.354166666666666,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "D",
+      "dimension": "imagery",
+      "mean": 4.125,
+      "low": 3.9375,
+      "high": 4.3125,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "D",
+      "dimension": "tone",
+      "mean": 4.833333333333334,
+      "low": 4.708333333333334,
+      "high": 4.9375,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "D",
+      "dimension": "english",
+      "mean": 4.708333333333334,
+      "low": 4.583333333333333,
+      "high": 4.833333333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "D",
+      "dimension": "faithful_fit",
+      "mean": 4.125,
+      "low": 3.979166666666666,
+      "high": 4.270833333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "D",
+      "dimension": "poetic_fit",
+      "mean": 4.229166666666667,
+      "low": 4.0625,
+      "high": 4.395833333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "E",
+      "dimension": "meaning",
+      "mean": 4.416666666666666,
+      "low": 4.25,
+      "high": 4.604166666666666,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "E",
+      "dimension": "imagery",
+      "mean": 4.375,
+      "low": 4.145833333333334,
+      "high": 4.583333333333333,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "E",
+      "dimension": "tone",
+      "mean": 4.791666666666666,
+      "low": 4.645833333333333,
+      "high": 4.9375,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "E",
+      "dimension": "english",
+      "mean": 4.770833333333334,
+      "low": 4.604166666666666,
+      "high": 4.916666666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "E",
+      "dimension": "faithful_fit",
+      "mean": 4.395833333333334,
+      "low": 4.229166666666666,
+      "high": 4.583333333333333,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "E",
+      "dimension": "poetic_fit",
+      "mean": 3.979166666666667,
+      "low": 3.7708333333333335,
+      "high": 4.166666666666666,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "F",
+      "dimension": "meaning",
+      "mean": 4.229166666666666,
+      "low": 3.9791666666666665,
+      "high": 4.479166666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "F",
+      "dimension": "imagery",
+      "mean": 4.291666666666667,
+      "low": 4.104166666666666,
+      "high": 4.479166666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "F",
+      "dimension": "tone",
+      "mean": 4.833333333333334,
+      "low": 4.645833333333334,
+      "high": 4.958333333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "F",
+      "dimension": "english",
+      "mean": 4.75,
+      "low": 4.604166666666667,
+      "high": 4.875,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "F",
+      "dimension": "faithful_fit",
+      "mean": 4.1875,
+      "low": 3.958333333333333,
+      "high": 4.416666666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "F",
+      "dimension": "poetic_fit",
+      "mean": 4.354166666666666,
+      "low": 4.166145833333333,
+      "high": 4.541666666666666,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "A",
+      "dimension": "meaning",
+      "mean": 4.4375,
+      "low": 4.166666666666666,
+      "high": 4.666666666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "A",
+      "dimension": "imagery",
+      "mean": 4.333333333333334,
+      "low": 4.083333333333334,
+      "high": 4.541666666666666,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "A",
+      "dimension": "tone",
+      "mean": 4.75,
+      "low": 4.604166666666666,
+      "high": 4.895833333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "A",
+      "dimension": "english",
+      "mean": 4.583333333333334,
+      "low": 4.395833333333334,
+      "high": 4.75,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "A",
+      "dimension": "faithful_fit",
+      "mean": 4.354166666666666,
+      "low": 4.103645833333333,
+      "high": 4.5625,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "A",
+      "dimension": "poetic_fit",
+      "mean": 3.9375,
+      "low": 3.770833333333333,
+      "high": 4.145833333333333,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "B",
+      "dimension": "meaning",
+      "mean": 4.270833333333333,
+      "low": 4.041666666666666,
+      "high": 4.479166666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "B",
+      "dimension": "imagery",
+      "mean": 4.270833333333333,
+      "low": 4.041666666666666,
+      "high": 4.5,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "B",
+      "dimension": "tone",
+      "mean": 4.791666666666667,
+      "low": 4.6875,
+      "high": 4.895833333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "B",
+      "dimension": "english",
+      "mean": 4.604166666666667,
+      "low": 4.4375,
+      "high": 4.75,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "B",
+      "dimension": "faithful_fit",
+      "mean": 4.291666666666666,
+      "low": 4.0625,
+      "high": 4.520833333333333,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "B",
+      "dimension": "poetic_fit",
+      "mean": 4.083333333333333,
+      "low": 3.9578124999999997,
+      "high": 4.229166666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "C",
+      "dimension": "meaning",
+      "mean": 4.395833333333334,
+      "low": 4.166666666666666,
+      "high": 4.604166666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "C",
+      "dimension": "imagery",
+      "mean": 4.395833333333333,
+      "low": 4.1875,
+      "high": 4.604166666666666,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "C",
+      "dimension": "tone",
+      "mean": 4.8125,
+      "low": 4.666666666666666,
+      "high": 4.9375,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "C",
+      "dimension": "english",
+      "mean": 4.645833333333334,
+      "low": 4.479166666666666,
+      "high": 4.8125,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "C",
+      "dimension": "faithful_fit",
+      "mean": 4.4375,
+      "low": 4.208333333333334,
+      "high": 4.645833333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "C",
+      "dimension": "poetic_fit",
+      "mean": 3.833333333333333,
+      "low": 3.6666666666666665,
+      "high": 3.9999999999999996,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "D",
+      "dimension": "meaning",
+      "mean": 4.333333333333334,
+      "low": 4.104166666666666,
+      "high": 4.5625,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "D",
+      "dimension": "imagery",
+      "mean": 4.25,
+      "low": 4.020833333333334,
+      "high": 4.458333333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "D",
+      "dimension": "tone",
+      "mean": 4.75,
+      "low": 4.583333333333333,
+      "high": 4.895833333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "D",
+      "dimension": "english",
+      "mean": 4.458333333333334,
+      "low": 4.1875,
+      "high": 4.6875,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "D",
+      "dimension": "faithful_fit",
+      "mean": 4.3125,
+      "low": 4.0625,
+      "high": 4.541666666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "D",
+      "dimension": "poetic_fit",
+      "mean": 4.166666666666666,
+      "low": 3.958333333333333,
+      "high": 4.395833333333333,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "E",
+      "dimension": "meaning",
+      "mean": 4.625,
+      "low": 4.4375,
+      "high": 4.791666666666666,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "E",
+      "dimension": "imagery",
+      "mean": 4.5625,
+      "low": 4.395833333333334,
+      "high": 4.729166666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "E",
+      "dimension": "tone",
+      "mean": 4.916666666666667,
+      "low": 4.8125,
+      "high": 5.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "E",
+      "dimension": "english",
+      "mean": 4.8125,
+      "low": 4.666666666666666,
+      "high": 4.9375,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "E",
+      "dimension": "faithful_fit",
+      "mean": 4.604166666666667,
+      "low": 4.416666666666666,
+      "high": 4.791666666666666,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "E",
+      "dimension": "poetic_fit",
+      "mean": 4.020833333333333,
+      "low": 3.8541666666666665,
+      "high": 4.1875,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "F",
+      "dimension": "meaning",
+      "mean": 4.25,
+      "low": 4.0625,
+      "high": 4.4375,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "F",
+      "dimension": "imagery",
+      "mean": 4.208333333333333,
+      "low": 3.979166666666667,
+      "high": 4.416666666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "F",
+      "dimension": "tone",
+      "mean": 4.791666666666667,
+      "low": 4.6875,
+      "high": 4.875,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "F",
+      "dimension": "english",
+      "mean": 4.708333333333334,
+      "low": 4.5625,
+      "high": 4.833333333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "F",
+      "dimension": "faithful_fit",
+      "mean": 4.229166666666667,
+      "low": 4.041666666666666,
+      "high": 4.395833333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "F",
+      "dimension": "poetic_fit",
+      "mean": 4.333333333333333,
+      "low": 4.145833333333334,
+      "high": 4.520833333333334,
+      "n_poems": 16
+    }
+  ],
+  "context": [
+    {
+      "model": "gpt-6.1-sol",
+      "contrast": "E-C",
+      "dimension": "meaning",
+      "mean": -0.020833333333333315,
+      "low": -0.08333333333333326,
+      "high": 0.04166666666666663,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "contrast": "E-C",
+      "dimension": "imagery",
+      "mean": 0.041666666666666685,
+      "low": -0.041666666666666574,
+      "high": 0.12499999999999994,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "contrast": "E-C",
+      "dimension": "tone",
+      "mean": -0.0625,
+      "low": -0.1875,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "contrast": "E-C",
+      "dimension": "english",
+      "mean": -0.020833333333333343,
+      "low": -0.2083333333333334,
+      "high": 0.12500000000000006,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "contrast": "E-C",
+      "dimension": "faithful_fit",
+      "mean": -0.041666666666666685,
+      "low": -0.14583333333333337,
+      "high": 0.04166666666666663,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "contrast": "E-C",
+      "dimension": "poetic_fit",
+      "mean": -0.12500000000000008,
+      "low": -0.3333333333333334,
+      "high": 0.0833333333333332,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "contrast": "F-D",
+      "dimension": "meaning",
+      "mean": 0.041666666666666685,
+      "low": -0.08333333333333343,
+      "high": 0.18750000000000006,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "contrast": "F-D",
+      "dimension": "imagery",
+      "mean": 0.06250000000000006,
+      "low": -0.062499999999999944,
+      "high": 0.1875000000000001,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "contrast": "F-D",
+      "dimension": "tone",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "contrast": "F-D",
+      "dimension": "english",
+      "mean": -0.2083333333333333,
+      "low": -0.39583333333333337,
+      "high": -0.041666666666666574,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "contrast": "F-D",
+      "dimension": "faithful_fit",
+      "mean": 0.0,
+      "low": -0.08333333333333337,
+      "high": 0.08333333333333337,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "contrast": "F-D",
+      "dimension": "poetic_fit",
+      "mean": -0.125,
+      "low": -0.2708333333333333,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "contrast": "E-C",
+      "dimension": "meaning",
+      "mean": -0.12500000000000003,
+      "low": -0.3333333333333335,
+      "high": 0.0833333333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "contrast": "E-C",
+      "dimension": "imagery",
+      "mean": -0.12500000000000006,
+      "low": -0.3333333333333335,
+      "high": 0.08333333333333331,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "contrast": "E-C",
+      "dimension": "tone",
+      "mean": -0.0625,
+      "low": -0.27083333333333337,
+      "high": 0.14583333333333337,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "contrast": "E-C",
+      "dimension": "english",
+      "mean": -0.02083333333333348,
+      "low": -0.22968750000000027,
+      "high": 0.2083333333333332,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "contrast": "E-C",
+      "dimension": "faithful_fit",
+      "mean": -0.10416666666666666,
+      "low": -0.29166666666666674,
+      "high": 0.08333333333333345,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "contrast": "E-C",
+      "dimension": "poetic_fit",
+      "mean": -2.7755575615628914e-17,
+      "low": -0.20833333333333331,
+      "high": 0.20833333333333323,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "contrast": "F-D",
+      "dimension": "meaning",
+      "mean": 0.06250000000000008,
+      "low": -0.14583333333333331,
+      "high": 0.27135416666666407,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "contrast": "F-D",
+      "dimension": "imagery",
+      "mean": 0.16666666666666669,
+      "low": -0.06249999999999997,
+      "high": 0.37500000000000006,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "contrast": "F-D",
+      "dimension": "tone",
+      "mean": 2.7755575615628914e-17,
+      "low": -0.22916666666666663,
+      "high": 0.18749999999999994,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "contrast": "F-D",
+      "dimension": "english",
+      "mean": 0.04166666666666674,
+      "low": -0.08333333333333326,
+      "high": 0.1875000000000001,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "contrast": "F-D",
+      "dimension": "faithful_fit",
+      "mean": 0.06250000000000003,
+      "low": -0.14583333333333326,
+      "high": 0.25000000000000017,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "contrast": "F-D",
+      "dimension": "poetic_fit",
+      "mean": 0.125,
+      "low": -0.10416666666666657,
+      "high": 0.31250000000000006,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "contrast": "E-C",
+      "dimension": "meaning",
+      "mean": 0.22916666666666674,
+      "low": 0.06250000000000006,
+      "high": 0.3750000000000002,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "contrast": "E-C",
+      "dimension": "imagery",
+      "mean": 0.16666666666666677,
+      "low": -0.062499999999999944,
+      "high": 0.3958333333333334,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "contrast": "E-C",
+      "dimension": "tone",
+      "mean": 0.10416666666666663,
+      "low": -0.06250000000000006,
+      "high": 0.2713541666666639,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "contrast": "E-C",
+      "dimension": "english",
+      "mean": 0.16666666666666666,
+      "low": -0.06250000000000006,
+      "high": 0.4166666666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "contrast": "E-C",
+      "dimension": "faithful_fit",
+      "mean": 0.16666666666666663,
+      "low": -8.396061623727742e-17,
+      "high": 0.31250000000000017,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "contrast": "E-C",
+      "dimension": "poetic_fit",
+      "mean": 0.1875,
+      "low": -0.04166666666666671,
+      "high": 0.4375,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "contrast": "F-D",
+      "dimension": "meaning",
+      "mean": -0.08333333333333337,
+      "low": -0.25000000000000017,
+      "high": 0.10416666666666671,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "contrast": "F-D",
+      "dimension": "imagery",
+      "mean": -0.04166666666666671,
+      "low": -0.20833333333333345,
+      "high": 0.125,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "contrast": "F-D",
+      "dimension": "tone",
+      "mean": 0.041666666666666796,
+      "low": -0.12499999999999978,
+      "high": 0.20833333333333343,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "contrast": "F-D",
+      "dimension": "english",
+      "mean": 0.25,
+      "low": -1.1102230246251565e-16,
+      "high": 0.5416666666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "contrast": "F-D",
+      "dimension": "faithful_fit",
+      "mean": -0.08333333333333345,
+      "low": -0.25000000000000033,
+      "high": 0.12499999999999983,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "contrast": "F-D",
+      "dimension": "poetic_fit",
+      "mean": 0.16666666666666666,
+      "low": -0.020833333333333287,
+      "high": 0.37500000000000006,
+      "n_poems": 16
+    }
+  ],
+  "purpose_preferences": [
+    {
+      "model": "gpt-6.1-sol",
+      "contrast": "D-C",
+      "n_poems": 16,
+      "opposite_preferences": 2,
+      "faithful_vs_reading_direction": 2,
+      "tie_on_either_goal": 13,
+      "categories": {
+        "both_up": 0,
+        "both_down": 1,
+        "reading_up_faith_down": 2,
+        "faith_up_reading_down": 0,
+        "one_tie": 8,
+        "both_tie": 5
+      }
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "contrast": "F-E",
+      "n_poems": 16,
+      "opposite_preferences": 2,
+      "faithful_vs_reading_direction": 2,
+      "tie_on_either_goal": 13,
+      "categories": {
+        "both_up": 1,
+        "both_down": 0,
+        "reading_up_faith_down": 2,
+        "faith_up_reading_down": 0,
+        "one_tie": 9,
+        "both_tie": 4
+      }
+    },
+    {
+      "model": "gpt-6-luna",
+      "contrast": "D-C",
+      "n_poems": 16,
+      "opposite_preferences": 4,
+      "faithful_vs_reading_direction": 4,
+      "tie_on_either_goal": 9,
+      "categories": {
+        "both_up": 1,
+        "both_down": 2,
+        "reading_up_faith_down": 4,
+        "faith_up_reading_down": 0,
+        "one_tie": 9,
+        "both_tie": 0
+      }
+    },
+    {
+      "model": "gpt-6-luna",
+      "contrast": "F-E",
+      "n_poems": 16,
+      "opposite_preferences": 5,
+      "faithful_vs_reading_direction": 5,
+      "tie_on_either_goal": 7,
+      "categories": {
+        "both_up": 3,
+        "both_down": 1,
+        "reading_up_faith_down": 5,
+        "faith_up_reading_down": 0,
+        "one_tie": 6,
+        "both_tie": 1
+      }
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "contrast": "D-C",
+      "n_poems": 16,
+      "opposite_preferences": 2,
+      "faithful_vs_reading_direction": 2,
+      "tie_on_either_goal": 11,
+      "categories": {
+        "both_up": 1,
+        "both_down": 2,
+        "reading_up_faith_down": 2,
+        "faith_up_reading_down": 0,
+        "one_tie": 10,
+        "both_tie": 1
+      }
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "contrast": "F-E",
+      "n_poems": 16,
+      "opposite_preferences": 5,
+      "faithful_vs_reading_direction": 5,
+      "tie_on_either_goal": 8,
+      "categories": {
+        "both_up": 2,
+        "both_down": 1,
+        "reading_up_faith_down": 5,
+        "faith_up_reading_down": 0,
+        "one_tie": 7,
+        "both_tie": 1
+      }
+    }
+  ],
+  "judge_sensitivity": [
+    {
+      "variant": "secondary",
+      "dimension": "meaning",
+      "n_translations": 288,
+      "mean_difference": 0.059027777777777776,
+      "mean_absolute_difference": 0.2951388888888889,
+      "exact_agreement": 0.7083333333333334
+    },
+    {
+      "variant": "secondary",
+      "dimension": "imagery",
+      "n_translations": 288,
+      "mean_difference": 0.17708333333333334,
+      "mean_absolute_difference": 0.3229166666666667,
+      "exact_agreement": 0.6909722222222222
+    },
+    {
+      "variant": "secondary",
+      "dimension": "tone",
+      "n_translations": 288,
+      "mean_difference": -0.1388888888888889,
+      "mean_absolute_difference": 0.1875,
+      "exact_agreement": 0.8125
+    },
+    {
+      "variant": "secondary",
+      "dimension": "english",
+      "n_translations": 288,
+      "mean_difference": 0.03819444444444445,
+      "mean_absolute_difference": 0.2465277777777778,
+      "exact_agreement": 0.7569444444444444
+    },
+    {
+      "variant": "secondary",
+      "dimension": "faithful_fit",
+      "n_translations": 288,
+      "mean_difference": 0.052083333333333336,
+      "mean_absolute_difference": 0.2881944444444444,
+      "exact_agreement": 0.71875
+    },
+    {
+      "variant": "secondary",
+      "dimension": "poetic_fit",
+      "n_translations": 288,
+      "mean_difference": 0.34375,
+      "mean_absolute_difference": 0.4895833333333333,
+      "exact_agreement": 0.5277777777777778
+    },
+    {
+      "variant": "reversed",
+      "dimension": "meaning",
+      "n_translations": 72,
+      "mean_difference": -0.05555555555555555,
+      "mean_absolute_difference": 0.08333333333333333,
+      "exact_agreement": 0.9166666666666666
+    },
+    {
+      "variant": "reversed",
+      "dimension": "imagery",
+      "n_translations": 72,
+      "mean_difference": 0.05555555555555555,
+      "mean_absolute_difference": 0.16666666666666666,
+      "exact_agreement": 0.8333333333333334
+    },
+    {
+      "variant": "reversed",
+      "dimension": "tone",
+      "n_translations": 72,
+      "mean_difference": 0.013888888888888888,
+      "mean_absolute_difference": 0.06944444444444445,
+      "exact_agreement": 0.9305555555555556
+    },
+    {
+      "variant": "reversed",
+      "dimension": "english",
+      "n_translations": 72,
+      "mean_difference": 0.0,
+      "mean_absolute_difference": 0.1388888888888889,
+      "exact_agreement": 0.8611111111111112
+    },
+    {
+      "variant": "reversed",
+      "dimension": "faithful_fit",
+      "n_translations": 72,
+      "mean_difference": -0.013888888888888888,
+      "mean_absolute_difference": 0.09722222222222222,
+      "exact_agreement": 0.9027777777777778
+    },
+    {
+      "variant": "reversed",
+      "dimension": "poetic_fit",
+      "n_translations": 72,
+      "mean_difference": -0.027777777777777776,
+      "mean_absolute_difference": 0.1388888888888889,
+      "exact_agreement": 0.8611111111111112
+    }
+  ],
+  "critical_unit_coverage": [
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "A",
+      "status": "present",
+      "mean": 0.9895833333333333,
+      "low": 0.9739583333333333,
+      "high": 1.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "A",
+      "status": "partial",
+      "mean": 0.010416666666666666,
+      "low": 0.0,
+      "high": 0.026041666666666664,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "A",
+      "status": "missing",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "A",
+      "status": "wrong",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "B",
+      "status": "present",
+      "mean": 0.9791666666666666,
+      "low": 0.953125,
+      "high": 1.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "B",
+      "status": "partial",
+      "mean": 0.020833333333333332,
+      "low": 0.0,
+      "high": 0.046875,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "B",
+      "status": "missing",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "B",
+      "status": "wrong",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "C",
+      "status": "present",
+      "mean": 1.0,
+      "low": 1.0,
+      "high": 1.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "C",
+      "status": "partial",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "C",
+      "status": "missing",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "C",
+      "status": "wrong",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "D",
+      "status": "present",
+      "mean": 0.9670138888888888,
+      "low": 0.9340277777777777,
+      "high": 0.9947916666666666,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "D",
+      "status": "partial",
+      "mean": 0.032986111111111105,
+      "low": 0.005208333333333333,
+      "high": 0.06597222222222222,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "D",
+      "status": "missing",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "D",
+      "status": "wrong",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "E",
+      "status": "present",
+      "mean": 0.9878472222222222,
+      "low": 0.970486111111111,
+      "high": 1.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "E",
+      "status": "partial",
+      "mean": 0.012152777777777776,
+      "low": 0.0,
+      "high": 0.029513888888888888,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "E",
+      "status": "missing",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "E",
+      "status": "wrong",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "F",
+      "status": "present",
+      "mean": 0.9791666666666666,
+      "low": 0.9635416666666666,
+      "high": 0.9947916666666666,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "F",
+      "status": "partial",
+      "mean": 0.020833333333333332,
+      "low": 0.005208333333333333,
+      "high": 0.03645833333333333,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "F",
+      "status": "missing",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "condition": "F",
+      "status": "wrong",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "A",
+      "status": "present",
+      "mean": 0.8993055555555556,
+      "low": 0.8541666666666666,
+      "high": 0.9461805555555556,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "A",
+      "status": "partial",
+      "mean": 0.10069444444444445,
+      "low": 0.05381944444444444,
+      "high": 0.14583333333333331,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "A",
+      "status": "missing",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "A",
+      "status": "wrong",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "B",
+      "status": "present",
+      "mean": 0.8472222222222222,
+      "low": 0.78125,
+      "high": 0.9097656249999999,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "B",
+      "status": "partial",
+      "mean": 0.15277777777777776,
+      "low": 0.09023437499999999,
+      "high": 0.21875,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "B",
+      "status": "missing",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "B",
+      "status": "wrong",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "C",
+      "status": "present",
+      "mean": 0.8993055555555555,
+      "low": 0.8420138888888888,
+      "high": 0.953125,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "C",
+      "status": "partial",
+      "mean": 0.0954861111111111,
+      "low": 0.04513888888888888,
+      "high": 0.14756944444444442,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "C",
+      "status": "missing",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "C",
+      "status": "wrong",
+      "mean": 0.005208333333333333,
+      "low": 0.0,
+      "high": 0.015625,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "D",
+      "status": "present",
+      "mean": 0.8003472222222222,
+      "low": 0.734375,
+      "high": 0.8645833333333333,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "D",
+      "status": "partial",
+      "mean": 0.1840277777777778,
+      "low": 0.1267361111111111,
+      "high": 0.23958333333333331,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "D",
+      "status": "missing",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "D",
+      "status": "wrong",
+      "mean": 0.015625,
+      "low": 0.0,
+      "high": 0.03125,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "E",
+      "status": "present",
+      "mean": 0.8559027777777777,
+      "low": 0.8003472222222222,
+      "high": 0.9115017361111108,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "E",
+      "status": "partial",
+      "mean": 0.1440972222222222,
+      "low": 0.08849826388888889,
+      "high": 0.19965277777777776,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "E",
+      "status": "missing",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "E",
+      "status": "wrong",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "F",
+      "status": "present",
+      "mean": 0.8003472222222222,
+      "low": 0.7204861111111112,
+      "high": 0.875,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "F",
+      "status": "partial",
+      "mean": 0.16840277777777776,
+      "low": 0.11284722222222221,
+      "high": 0.22916666666666666,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "F",
+      "status": "missing",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-6-luna",
+      "condition": "F",
+      "status": "wrong",
+      "mean": 0.03125,
+      "low": 0.0,
+      "high": 0.08333333333333333,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "A",
+      "status": "present",
+      "mean": 0.8506944444444444,
+      "low": 0.763845486111111,
+      "high": 0.9270833333333333,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "A",
+      "status": "partial",
+      "mean": 0.14930555555555552,
+      "low": 0.07291666666666666,
+      "high": 0.23615451388888864,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "A",
+      "status": "missing",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "A",
+      "status": "wrong",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "B",
+      "status": "present",
+      "mean": 0.8229166666666667,
+      "low": 0.7517361111111112,
+      "high": 0.8923611111111112,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "B",
+      "status": "partial",
+      "mean": 0.17708333333333334,
+      "low": 0.10763888888888888,
+      "high": 0.2482638888888889,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "B",
+      "status": "missing",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "B",
+      "status": "wrong",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "C",
+      "status": "present",
+      "mean": 0.8333333333333334,
+      "low": 0.7534722222222223,
+      "high": 0.90625,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "C",
+      "status": "partial",
+      "mean": 0.16145833333333331,
+      "low": 0.09027777777777779,
+      "high": 0.2378472222222222,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "C",
+      "status": "missing",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "C",
+      "status": "wrong",
+      "mean": 0.005208333333333333,
+      "low": 0.0,
+      "high": 0.015625,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "D",
+      "status": "present",
+      "mean": 0.8159722222222222,
+      "low": 0.7256944444444444,
+      "high": 0.9010416666666667,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "D",
+      "status": "partial",
+      "mean": 0.1840277777777778,
+      "low": 0.09895833333333333,
+      "high": 0.2743055555555555,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "D",
+      "status": "missing",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "D",
+      "status": "wrong",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "E",
+      "status": "present",
+      "mean": 0.921875,
+      "low": 0.8697916666666667,
+      "high": 0.96875,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "E",
+      "status": "partial",
+      "mean": 0.078125,
+      "low": 0.03125,
+      "high": 0.13020833333333331,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "E",
+      "status": "missing",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "E",
+      "status": "wrong",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "F",
+      "status": "present",
+      "mean": 0.8038194444444444,
+      "low": 0.7274305555555556,
+      "high": 0.8784722222222222,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "F",
+      "status": "partial",
+      "mean": 0.1892361111111111,
+      "low": 0.11979166666666666,
+      "high": 0.2621527777777778,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "F",
+      "status": "missing",
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0,
+      "n_poems": 16
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "condition": "F",
+      "status": "wrong",
+      "mean": 0.006944444444444444,
+      "low": 0.0,
+      "high": 0.020833333333333332,
+      "n_poems": 16
+    }
+  ]
+}

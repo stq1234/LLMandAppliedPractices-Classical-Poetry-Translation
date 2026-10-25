@@ -1,0 +1,1203 @@
+{
+  "judge_plan_version": 1,
+  "variant": "reversed",
+  "split": "test",
+  "generation_manifest": "generation_manifest.json",
+  "judge_model": "gpt-6.1-sol",
+  "judge_instructions": "Evaluate each English poem translation against the supplied Chinese source. Score each translation on six separate dimensions from 1 to 5 using integers only. The common anchors are: 1 = severe failure; 3 = broadly understandable or basically present but with clear defects; 5 = accurate or excellent for that dimension. Scores 2 and 4 are intermediate.\n\nDimensions: meaning = semantic accuracy and coverage; imagery = preservation and clarity of source images; tone = preservation of register and emotional direction; english = grammar, idiom, and fluency; faithful_fit = suitability as a faithful literary translation for an English-only reader; poetic_fit = effectiveness as an English poem, including rhythm and lineation. Consider the translation as the primary work. Notes may help only with faithful_fit; they must not compensate for material absent from the translation in the other dimensions or in critical-unit coverage. Do not reward length, the number of notes, or wording merely repeated between translation and notes. Do not infer which prompt, condition, or model produced an item.\n\nEnglish syntax may require an explicit subject or pronoun. A reasonable I/we/she or similar subject added to form a complete English sentence is not automatically an error. Penalize only unsupported specificity about identity, relationship, or a new event, and allow ambiguity where the Chinese source permits it.\n\nFor every critical unit, assign one status based on the translation: present (meaning accurately conveyed), partial (only some meaning conveyed), missing (not conveyed), or wrong (materially distorted). Give a short exact quote from the translation as evidence when possible; a note may be quoted only when it directly clarifies that unit. For a missing unit with no relevant excerpt, quote may be empty, but explanation must say what is absent. Every non-empty quote must be copied exactly from that item's translation or notes. Keep explanations concise.\n\nReturn exactly one JSON object, with no prose or code fence, in this schema:\n{\"evaluations\":[{\"opaque_id\":\"...\",\"scores\":{\"meaning\":1,\"imagery\":1,\"tone\":1,\"english\":1,\"faithful_fit\":1,\"poetic_fit\":1},\"critical_units\":[{\"id\":\"...\",\"status\":\"present\",\"quote\":\"...\",\"explanation\":\"...\"}]}]}\nInclude every supplied opaque_id exactly once. Include every supplied critical-unit id exactly once for each translation. Do not add dimensions, units, or items.",
+  "seed": 20261025,
+  "batch_size": 6,
+  "max_completion_tokens": 8192,
+  "reasoning_effort": "low",
+  "temperature": "omitted",
+  "top_p": "omitted",
+  "source_poems": {
+    "song_03": {
+      "text": "执手相看泪眼，竟无语凝噎。\n念去去、千里烟波，暮霭沉沉楚天阔。",
+      "critical_units": [
+        {
+          "id": "song_03_u1",
+          "source_span": "执手相看泪眼",
+          "meaning": "以相握的手和泪眼呈现临别双方。"
+        },
+        {
+          "id": "song_03_u2",
+          "source_span": "竟无语凝噎",
+          "meaning": "情绪使言语受阻，具体发话者未逐一标明。"
+        },
+        {
+          "id": "song_03_u3",
+          "source_span": "念去去、千里烟波",
+          "meaning": "由当前分别转向想象远行的漫长水路。"
+        },
+        {
+          "id": "song_03_u4",
+          "source_span": "暮霭沉沉楚天阔",
+          "meaning": "暮霭和辽阔天空共同营造远阔、低沉的景象。"
+        }
+      ]
+    },
+    "song_04": {
+      "text": "更能消几番风雨，\n匆匆春又归去。\n惜春长怕花开早，\n何况落红无数。",
+      "critical_units": [
+        {
+          "id": "song_04_u1",
+          "source_span": "更能消几番风雨",
+          "meaning": "反问还能承受几番风雨，语气中含春光易逝的忧虑。"
+        },
+        {
+          "id": "song_04_u2",
+          "source_span": "匆匆春又归去",
+          "meaning": "把春天写成匆忙离开的对象。"
+        },
+        {
+          "id": "song_04_u3",
+          "source_span": "惜春长怕花开早",
+          "meaning": "因爱惜春光而担心花期过早。"
+        },
+        {
+          "id": "song_04_u4",
+          "source_span": "落红无数",
+          "meaning": "众多落花加强春将尽的感受。"
+        }
+      ]
+    },
+    "song_05": {
+      "text": "鸟雀呼晴，侵晓窥檐语。\n叶上初阳干宿雨。水面清圆，一一风荷举。",
+      "critical_units": [
+        {
+          "id": "song_05_u1",
+          "source_span": "鸟雀呼晴",
+          "meaning": "鸟鸣被写成仿佛在呼唤晴天。"
+        },
+        {
+          "id": "song_05_u2",
+          "source_span": "侵晓窥檐语",
+          "meaning": "拂晓时鸟雀在檐边活动鸣叫，“窥”带有拟人色彩。"
+        },
+        {
+          "id": "song_05_u3",
+          "source_span": "初阳干宿雨",
+          "meaning": "早晨日光使叶上的夜雨渐干。"
+        },
+        {
+          "id": "song_05_u4",
+          "source_span": "一一风荷举",
+          "meaning": "风中荷叶一片片举起，描写水面动态。"
+        }
+      ]
+    },
+    "song_06": {
+      "text": "自胡马窥江去后，废池乔木，犹厌言兵。\n渐黄昏，清角吹寒，都在空城。",
+      "critical_units": [
+        {
+          "id": "song_06_u1",
+          "source_span": "胡马窥江",
+          "meaning": "以“胡马”代指来犯兵势，带有历史文化指涉。"
+        },
+        {
+          "id": "song_06_u2",
+          "source_span": "废池乔木",
+          "meaning": "以残池和高木呈现战后城市景象。"
+        },
+        {
+          "id": "song_06_u3",
+          "source_span": "犹厌言兵",
+          "meaning": "将废池乔木写成厌恶谈兵，形成拟人。"
+        },
+        {
+          "id": "song_06_u4",
+          "source_span": "清角吹寒",
+          "meaning": "号角声与寒意相连，听觉引出体感和气氛。"
+        }
+      ]
+    }
+  },
+  "batches": [
+    {
+      "batch_id": "song_03__r0__b00",
+      "split": "test",
+      "poem_id": "song_03",
+      "genre": "song_ci",
+      "repetition": 0,
+      "batch_number": 0,
+      "items": [
+        {
+          "task_id": "g_0ee109f341c655c5765d",
+          "poem_id": "song_03",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "x763713a63fe6d0",
+          "available": true,
+          "translation": "Clasping hands, we gaze into tear-filled eyes,\nMute, our throats choked with sobs.\nI think of the road stretching on and on—\nA thousand miles of misty waters,\nThe evening haze sinking deep beneath the vast Chu sky.",
+          "notes": []
+        },
+        {
+          "task_id": "g_4376e7ffe304fc67812f",
+          "poem_id": "song_03",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "x063da59c81bf9a",
+          "available": true,
+          "translation": "Holding hands, we gaze into each other’s tear-filled eyes,\nChoked with sobs, unable to speak.\nI think of going, farther and farther—\nA thousand miles of mist-veiled waters,\nEvening haze hanging heavy beneath Chu’s vast sky.",
+          "notes": []
+        },
+        {
+          "task_id": "g_7322ce498ee3e069b51d",
+          "poem_id": "song_03",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "x16559bcef6cacc",
+          "available": true,
+          "translation": "Hand clasped in hand, we gaze through tears,\nchoked into silence—not a word.\nI think of going, farther, farther:\na thousand miles of mist-veiled waves,\nthe dusk-mists deep and heavy,\nthe skies of Chu so vast.",
+          "notes": []
+        },
+        {
+          "task_id": "g_add4c703617d797f5b6a",
+          "poem_id": "song_03",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "x8ec7181249806a",
+          "available": true,
+          "translation": "Hand in hand, we gaze through tear-filled eyes,\nyet neither can speak, choked with grief.\nI think of the long road ahead—miles of mist-veiled waters;\ndusk settles heavy beneath the vast Chu sky.",
+          "notes": []
+        },
+        {
+          "task_id": "g_adf369d855993c22c59e",
+          "poem_id": "song_03",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "x206ea39f9ef54d",
+          "available": true,
+          "translation": "Hand in hand, we gaze through tears—\nno words, our throats choked tight.\nI think of the miles ahead: mist over a thousand li;\nat dusk, heavy clouds, and the vastness of the Chu sky.",
+          "notes": []
+        },
+        {
+          "task_id": "g_784d3bb5d360bc5baf82",
+          "poem_id": "song_03",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "xc0abf849125743",
+          "available": true,
+          "translation": "Hand in hand, we meet each other’s tearful eyes—\nthen words fail, and grief closes the throat.\nI think of the miles ahead: waves of mist,\ndusk deepening, the vast Chu sky stretching wide.",
+          "notes": []
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "song_03__r0__b01",
+      "split": "test",
+      "poem_id": "song_03",
+      "genre": "song_ci",
+      "repetition": 0,
+      "batch_number": 1,
+      "items": [
+        {
+          "task_id": "g_2b7c835d2942312820db",
+          "poem_id": "song_03",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "x986fb17a92bbed",
+          "available": true,
+          "translation": "Holding hands, we gaze into each other’s tear-filled eyes,\nchoked with sobs, unable to speak.\nI think of going farther, farther away—\na thousand miles of mist-veiled waters,\nevening haze hanging heavy beneath the vast skies of Chu.",
+          "notes": [
+            "Chu is an ancient name for a region of southern China, evoking the distant landscape of the journey ahead."
+          ]
+        },
+        {
+          "task_id": "g_9bac4214f3c5b92ec29e",
+          "poem_id": "song_03",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "x8023de8d2dc644",
+          "available": true,
+          "translation": "Holding hands, we gaze into each other’s tearful eyes,\nchoked with sobs, unable to speak.\nI think of going—farther, farther—\na thousand miles of mist and waves,\nevening haze hanging heavy,\nthe skies of Chu stretching wide.",
+          "notes": []
+        },
+        {
+          "task_id": "g_49500c0475ef1eaf690d",
+          "poem_id": "song_03",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "x1694caf9431e01",
+          "available": true,
+          "translation": "Hand in hand, we gaze through tear-blurred eyes;  \nspeech fails, and we choke on silence.  \nI think of the road stretching on and on—  \na thousand miles of misty waters;  \nheavy dusk spreads beneath the vast Chu sky.",
+          "notes": []
+        },
+        {
+          "task_id": "g_f7ec4ab1ca30abb2892c",
+          "poem_id": "song_03",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "x46bf8b84552ade",
+          "available": true,
+          "translation": "Holding hands, we gaze into tear-filled eyes—\nNo words can pass our choked throats.\nI think of the road ahead, ahead:\nA thousand miles of misty waters,\nDusk haze sinking heavily beneath\nThe vast, far-reaching Chu sky.",
+          "notes": []
+        },
+        {
+          "task_id": "g_83b0a664a24f4241da46",
+          "poem_id": "song_03",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "x106728bd7bf2f2",
+          "available": true,
+          "translation": "Hand in hand, we gaze at each other through tear-blurred eyes; not a word can pass our choked throats.\nI think of the long journey ahead: a thousand miles of mist-veiled waters, dusk haze heavy beneath the vast southern sky.",
+          "notes": [
+            "“Chu” refers to the ancient southern region of China."
+          ]
+        },
+        {
+          "task_id": "g_93288245e573de71ebfc",
+          "poem_id": "song_03",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "x8a1bddd4c5b137",
+          "available": true,
+          "translation": "Hand in hand, we gaze through tear-filled eyes,\nSpeechless, choked with grief.\nI think of the miles ahead, veiled in misty waves;\nAt dusk, dense clouds darken the vast Chu sky.",
+          "notes": []
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "song_03__r0__b02",
+      "split": "test",
+      "poem_id": "song_03",
+      "genre": "song_ci",
+      "repetition": 0,
+      "batch_number": 2,
+      "items": [
+        {
+          "task_id": "g_60f698fc0be048176dbf",
+          "poem_id": "song_03",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "xf78a1f093702bf",
+          "available": true,
+          "translation": "Hand in hand, we gaze into tear-filled eyes,\nchoked with feeling, unable to speak.\nI imagine the journey ahead—\nthousands of miles through misty waters,\nas dusk settles thick beneath the vast Chu sky.",
+          "notes": []
+        },
+        {
+          "task_id": "g_c351324beeeea7d5cdb2",
+          "poem_id": "song_03",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "x468e094f3f748c",
+          "available": true,
+          "translation": "We clasp hands, gazing into tear-filled eyes,\nyet cannot speak, choked by grief.\nI think of the road stretching on and on—\na thousand miles of mist-veiled waters,\nevening haze sinking heavily beneath the vast Chu sky.",
+          "notes": [
+            "“Chu” refers to the ancient southern region of China, used here for the distant landscape."
+          ]
+        },
+        {
+          "task_id": "g_d40663e77132f5f8565d",
+          "poem_id": "song_03",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "x1ddfc919a74769",
+          "available": true,
+          "translation": "Holding hands, we gaze into tear-filled eyes,\nyet neither can speak, choked with sobs.\nThinking of the journey stretching on—\nthousands of miles of misty waters,\ndusk haze deep and heavy beneath Chu’s vast sky.",
+          "notes": []
+        },
+        {
+          "task_id": "g_1c8b1635dbaaf986f3b6",
+          "poem_id": "song_03",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "x2156ef9c4edc29",
+          "available": true,
+          "translation": "Hands clasped, we gaze into each other’s tear-filled eyes,\nchoked with sobs, unable to speak.\nI think of going, farther and farther—\na thousand miles of mist-veiled waters,\nevening haze hanging heavy\nunder the vast skies of Chu.",
+          "notes": []
+        },
+        {
+          "task_id": "g_99ed0db8f51db4e5aef1",
+          "poem_id": "song_03",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "xbb923c8818e5d3",
+          "available": true,
+          "translation": "Hand in hand, we gaze through tearful eyes—\nwords choked back, nothing to say.\nI think of the road stretching on:\na thousand miles of misty waters,\ndusk haze sinking beneath the vast Chu sky.",
+          "notes": []
+        },
+        {
+          "task_id": "g_79837baa867333fc1081",
+          "poem_id": "song_03",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "xff11a5d1707fd2",
+          "available": true,
+          "translation": "Holding hands, we gaze into each other’s tear-filled eyes,\nChoked with grief, unable to speak.\nI think of the journey onward, farther still—\nA thousand miles of mist-veiled waters,\nEvening haze hanging heavy beneath the vast skies of Chu.",
+          "notes": [
+            "Chu is an ancient name for a region of southern China."
+          ]
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "song_04__r0__b00",
+      "split": "test",
+      "poem_id": "song_04",
+      "genre": "song_ci",
+      "repetition": 0,
+      "batch_number": 0,
+      "items": [
+        {
+          "task_id": "g_9a30160067c537fdff2c",
+          "poem_id": "song_04",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "xe37a61586177a4",
+          "available": true,
+          "translation": "How many more storms can it withstand?\nIn haste, spring once more departs.\nCherishing spring, I have long feared the flowers blooming too soon—\nall the more so when fallen petals lie scattered without end.",
+          "notes": []
+        },
+        {
+          "task_id": "g_d4ecc595d6a3d2507830",
+          "poem_id": "song_04",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "xe2f599ed3d1367",
+          "available": true,
+          "translation": "How many more rounds of wind and rain can spring endure?\nIn haste, spring has gone away again.\nThose who grieve for spring have long feared its flowers would bloom too soon—\nall the more so now, with countless petals falling.",
+          "notes": []
+        },
+        {
+          "task_id": "g_4c466f427e43f23d8de0",
+          "poem_id": "song_04",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "x0067b915766c21",
+          "available": true,
+          "translation": "How many more bouts of wind and rain can spring endure?\nSo swiftly, spring is leaving once again.\nThose who cherish spring always fear the flowers bloom too soon—\nHow much harder to bear the countless fallen petals.",
+          "notes": []
+        },
+        {
+          "task_id": "g_0382d5f6b3aee9d00e30",
+          "poem_id": "song_04",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "x0b157e8d6ebbe2",
+          "available": true,
+          "translation": "How many more rounds of wind and rain can it endure?\nIn haste, spring has gone away again.\nLoving spring, I’ve long feared the flowers would bloom too soon—\nAnd more so now, with countless fallen petals.",
+          "notes": []
+        },
+        {
+          "task_id": "g_c65a46c7ecbaa991fe2e",
+          "poem_id": "song_04",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "xd84ccf10bcc74d",
+          "available": true,
+          "translation": "How many more storms can spring endure?—\nIn haste, it slips away again.\nI grieve for spring, forever fearing the blossoms open too soon;\nAnd now, how much more, with fallen petals without number.",
+          "notes": []
+        },
+        {
+          "task_id": "g_faba02aa91c8e8093902",
+          "poem_id": "song_04",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "x38478d708c7016",
+          "available": true,
+          "translation": "How many more bouts of wind and rain can spring endure?\nIn haste, spring too has gone away.\nCherishing spring, I have long feared it would bloom too soon—\nall the more so now, with fallen blossoms beyond count.",
+          "notes": []
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "song_04__r0__b01",
+      "split": "test",
+      "poem_id": "song_04",
+      "genre": "song_ci",
+      "repetition": 0,
+      "batch_number": 1,
+      "items": [
+        {
+          "task_id": "g_c58623f3a4a093ab40df",
+          "poem_id": "song_04",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "x3c2b3de2553cb7",
+          "available": true,
+          "translation": "How many more storms can we endure?\nIn haste, spring has gone again.\nI cherish spring, yet dread the flowers blooming too soon—\nAnd now, how many fallen petals lie scattered.",
+          "notes": []
+        },
+        {
+          "task_id": "g_cd8ca2e3c6c2269be288",
+          "poem_id": "song_04",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "xfcd47ea589112d",
+          "available": true,
+          "translation": "How many more rounds of wind and rain can it endure?\nIn haste, spring has gone away again.\nI cherish spring, and always fear the flowers will bloom too soon—\nall the more so now, with countless blossoms fallen.",
+          "notes": []
+        },
+        {
+          "task_id": "g_53b7dec0d1076f025184",
+          "poem_id": "song_04",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "xe9d44428ae37e0",
+          "available": true,
+          "translation": "How many more storms\ncan spring withstand?\nIn haste, spring leaves again.\nThose who grieve for spring\nhave long feared the flowers bloom too soon—\nhow much more, with petals falling everywhere.",
+          "notes": []
+        },
+        {
+          "task_id": "g_331430162611c0e6a728",
+          "poem_id": "song_04",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "x71502abb46bcb1",
+          "available": true,
+          "translation": "How many more bouts of wind and rain can spring endure?\nIn such haste, spring departs once more.\nCherishing spring, I always fear the flowers bloom too soon—\nHow much more, then, when fallen petals lie beyond counting.",
+          "notes": []
+        },
+        {
+          "task_id": "g_beb5e3095465e6eaa6d2",
+          "poem_id": "song_04",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "xd0a15c3dc82c15",
+          "available": true,
+          "translation": "How many more storms can spring withstand?\nIn haste, it turns and goes.\nThose who love spring always fear the flowers bloom too soon—\nWhat of the countless fallen blooms?",
+          "notes": []
+        },
+        {
+          "task_id": "g_277c6f47c3a659722c1f",
+          "poem_id": "song_04",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "xfc8a3a2f0de452",
+          "available": true,
+          "translation": "How much more wind and rain can spring endure?\nIn haste, once more, spring slips away.\nI treasure spring, and fear the flowers bloom too soon—\nHow much harder, then, to see red petals fallen beyond counting.",
+          "notes": []
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "song_04__r0__b02",
+      "split": "test",
+      "poem_id": "song_04",
+      "genre": "song_ci",
+      "repetition": 0,
+      "batch_number": 2,
+      "items": [
+        {
+          "task_id": "g_9a8d10cb5466a49e1432",
+          "poem_id": "song_04",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "xaedaff6a0996e9",
+          "available": true,
+          "translation": "How many more bouts of wind and rain can spring endure?\nIn haste, spring slips away once more.\nCherishing spring, I always fear the flowers bloom too soon—\nHow much harder, then, to bear the countless fallen petals.",
+          "notes": []
+        },
+        {
+          "task_id": "g_4f6711d2c45d3de763e2",
+          "poem_id": "song_04",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "x0b9b977d8b9c17",
+          "available": true,
+          "translation": "How much more wind and rain can spring endure?\nSo swiftly, spring departs again.\nTo cherish spring is to dread flowers blooming too soon—\nhow much more, then, red petals fallen beyond count.",
+          "notes": []
+        },
+        {
+          "task_id": "g_9dc33a40904622db7f41",
+          "poem_id": "song_04",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "xe7eac0870a0028",
+          "available": true,
+          "translation": "How many more bouts of wind and rain can spring endure?\nIn haste, spring slips away again.\nCherishing spring, I always fear the flowers bloom too soon—\nHow much more, then, these countless fallen petals.",
+          "notes": []
+        },
+        {
+          "task_id": "g_96d54ec2e3f0568b2d48",
+          "poem_id": "song_04",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "xe789478b6bade4",
+          "available": true,
+          "translation": "How many more storms can spring endure?\nIn haste, spring has gone away again.\nI cherish spring, always fearing flowers bloom too soon—\nall the more so when countless petals fall.",
+          "notes": []
+        },
+        {
+          "task_id": "g_20114c25bf054c1c313d",
+          "poem_id": "song_04",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "xcd5320cd9b3f72",
+          "available": true,
+          "translation": "How many more storms\ncan the spring light endure?\nIn haste, spring has gone again.\nThose who cherish spring have long feared\nthe flowers would bloom too soon—\nhow much more, then, the countless fallen petals.",
+          "notes": []
+        },
+        {
+          "task_id": "g_d34c249ce6b844f558a3",
+          "poem_id": "song_04",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "xaa0834da10c5c5",
+          "available": true,
+          "translation": "How many rounds of wind and rain\nCan spring endure?\nIn haste, spring slips away once more.\nI grieve for spring, long fearing flowers would bloom too soon—\nAll the more with fallen blossoms, countless on the ground.",
+          "notes": []
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "song_05__r0__b00",
+      "split": "test",
+      "poem_id": "song_05",
+      "genre": "song_ci",
+      "repetition": 0,
+      "batch_number": 0,
+      "items": [
+        {
+          "task_id": "g_f508fafbabda9c64f0e4",
+          "poem_id": "song_05",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "x0ce8f40dc8aa55",
+          "available": true,
+          "translation": "The birds call the fair skies in; at dawn’s first light, they peer beneath the eaves and chatter.\nThe newborn sun dries last night’s rain from the leaves. Clear and round, the water holds each lotus, lifted by the breeze.",
+          "notes": []
+        },
+        {
+          "task_id": "g_0a6b7ede04bbba95388c",
+          "poem_id": "song_05",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "x63af98f21cecae",
+          "available": true,
+          "translation": "Sparrows call the fair weather in,\npeering beneath the eaves at dawn, chattering.\nThe first sun dries the night's rain from the leaves;\non the clear, round water, each wind-blown lotus rises.",
+          "notes": []
+        },
+        {
+          "task_id": "g_d59a8b6f49439c9e5e77",
+          "poem_id": "song_05",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "xcf5c98297ebe83",
+          "available": true,
+          "translation": "Birds call for clear skies;\nat first light they peep beneath the eaves and chatter.\nThe morning sun dries last night’s rain from the leaves.\nOn the water, fresh and round,\nlotus leaves lift, one by one, in the breeze.",
+          "notes": []
+        },
+        {
+          "task_id": "g_c5651faf70af7de32bf5",
+          "poem_id": "song_05",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "xe28dfb897d39dc",
+          "available": true,
+          "translation": "Birds call for clear skies;\nat daybreak, they peer beneath the eaves and chatter.\nThe early sun dries last night’s rain upon the leaves.\nOn the water, pure and round,\nlotus leaves rise, one by one, in the breeze.",
+          "notes": []
+        },
+        {
+          "task_id": "g_6e57b46f6a06fd4608e6",
+          "poem_id": "song_05",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "xf054abd37a5fe6",
+          "available": true,
+          "translation": "Birds call for clear skies;\nat first light, they peer beneath the eaves and chatter.\nThe early sun dries last night's rain from the leaves.\nOn the water, fresh and round,\nlotus leaves rise, one by one, lifted by the wind.",
+          "notes": []
+        },
+        {
+          "task_id": "g_472df5b334675e7dd556",
+          "poem_id": "song_05",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "x04eabe0513579c",
+          "available": true,
+          "translation": "Birds call the fair weather, peering beneath the eaves at dawn.\nOn the leaves, the newborn sun dries the night’s rain.\nAcross the water, clear and round,\none by one, lotus leaves rise in the breeze.",
+          "notes": []
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "song_05__r0__b01",
+      "split": "test",
+      "poem_id": "song_05",
+      "genre": "song_ci",
+      "repetition": 0,
+      "batch_number": 1,
+      "items": [
+        {
+          "task_id": "g_b31a16105585c795b383",
+          "poem_id": "song_05",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "xa6078998ba5435",
+          "available": true,
+          "translation": "Birds call out the clearing sky, peering beneath the eaves at dawn as they chatter.\nFirst sunlight dries the night’s rain from the leaves. On the water, clear and round, each wind-lifted lotus rises.",
+          "notes": []
+        },
+        {
+          "task_id": "g_6c0698f1be033ca54cb5",
+          "poem_id": "song_05",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "x92afb7c845e926",
+          "available": true,
+          "translation": "Birds call for clearing skies, chattering by the eaves as dawn approaches.\nThe first sunlight dries last night’s rain on the leaves. On the water, lotus leaves, smooth and round, rise one by one, lifted by the breeze.",
+          "notes": []
+        },
+        {
+          "task_id": "g_1694bdeb05ecd086db4e",
+          "poem_id": "song_05",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "x562ee7151b6e4a",
+          "available": true,
+          "translation": "Birds call out the clearing sky, chattering by the eaves at dawn.\nThe first sunlight dries the night’s rain from the leaves.\nThe water lies clear and round; one by one, the wind lifts the lotuses.",
+          "notes": []
+        },
+        {
+          "task_id": "g_d58b47f6706d159a7249",
+          "poem_id": "song_05",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "xb3b24ab6c3cff0",
+          "available": true,
+          "translation": "Birds call for clear skies;\nat first light, they peer beneath the eaves and chatter.\nThe early sun dries last night's rain from the leaves.\nOn the water, clear and round,\nthe lotus leaves rise,\none by one, lifted by the wind.",
+          "notes": []
+        },
+        {
+          "task_id": "g_af04171f38fc7da945d8",
+          "poem_id": "song_05",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "xa33f8f37841510",
+          "available": true,
+          "translation": "Birds call for clear skies;\nat first light, they peer beneath the eaves and chatter.\nThe early sun dries last night’s rain from the leaves.\nOver the water, fresh and round,\none by one the lotus leaves\nrise in the wind.",
+          "notes": []
+        },
+        {
+          "task_id": "g_4cf0f235d2cbab4f60c9",
+          "poem_id": "song_05",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "xca2d487a2f11f7",
+          "available": true,
+          "translation": "Birds call out, heralding fair weather; at dawn they whisper, peering beneath the eaves.\nThe first sunlight dries the night’s rain upon the leaves.\nThe water lies clear and round; one by one, wind-borne lotuses rise.",
+          "notes": []
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "song_05__r0__b02",
+      "split": "test",
+      "poem_id": "song_05",
+      "genre": "song_ci",
+      "repetition": 0,
+      "batch_number": 2,
+      "items": [
+        {
+          "task_id": "g_c719264047915665410a",
+          "poem_id": "song_05",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "x9c5ded98336859",
+          "available": true,
+          "translation": "Birds call the fair weather in,\npeering beneath the eaves at dawn, chattering.\nThe first sunlight dries last night’s rain from the leaves.\nOn the clear, round water,\none by one, wind-lifted lotus leaves rise.",
+          "notes": []
+        },
+        {
+          "task_id": "g_8d36fd4aec3ee57da6b3",
+          "poem_id": "song_05",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "x37e9f757109b5d",
+          "available": true,
+          "translation": "Birds call for clearing skies; at dawn\nThey chatter, peering by the eaves.\nThe first sun dries last night’s rain from leaves;\nOn clear, round water, lotus leaves\nRise one by one, lifted by the wind.",
+          "notes": []
+        },
+        {
+          "task_id": "g_e17383915c9ec066bdee",
+          "poem_id": "song_05",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "x96f0f0be945f40",
+          "available": true,
+          "translation": "Birds call the fair weather in,\nchattering beneath the eaves at dawn.\nFirst sunlight dries last night’s rain\non every leaf. The water, clear and round—\none by one, wind lifts the lotus leaves.",
+          "notes": []
+        },
+        {
+          "task_id": "g_dbd2e25245a629363c5a",
+          "poem_id": "song_05",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "x47061d75620b8b",
+          "available": true,
+          "translation": "Birds call for clearing skies,\nchirring by the eaves before dawn.\nEarly sun dries last night’s rain from the leaves.\nOn the water, round and bright,\nlotus leaves rise, one by one, at the wind’s touch.",
+          "notes": []
+        },
+        {
+          "task_id": "g_3874aeea6283c7d848d1",
+          "poem_id": "song_05",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "xfcac799694bcda",
+          "available": true,
+          "translation": "Birds call for clear skies;\nat first light, they peer beneath the eaves and chatter.\nThe early sun dries last night’s rain from the leaves.\nOn the water, fresh and round,\nlotus leaves lift one by one in the breeze.",
+          "notes": []
+        },
+        {
+          "task_id": "g_22b05241269b020725b1",
+          "poem_id": "song_05",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "xfe21a683d74d23",
+          "available": true,
+          "translation": "Birds call for clear skies, chattering beneath the eaves before dawn.\nThe newborn sun dries last night’s rain from the leaves; on the water, round lotus leaves rise one by one, lifted by the wind.",
+          "notes": []
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "song_06__r0__b00",
+      "split": "test",
+      "poem_id": "song_06",
+      "genre": "song_ci",
+      "repetition": 0,
+      "batch_number": 0,
+      "items": [
+        {
+          "task_id": "g_9fe8741f9c1d25f8872d",
+          "poem_id": "song_06",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "x82ddbe9937064e",
+          "available": true,
+          "translation": "Since the northern horsemen came to spy along the river and left,\nruined pools and towering trees still shrink from talk of war.\n\nDusk gathers, slowly. A mournful horn blows through the cold—\nall of it, in this empty city.",
+          "notes": []
+        },
+        {
+          "task_id": "g_d547edaf25c34238ba5f",
+          "poem_id": "song_06",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "xa4f130af6edf46",
+          "available": true,
+          "translation": "Since the northern horsemen withdrew after menacing the river,\nthe ruined ponds and towering trees\nstill resent any mention of war.\nAs dusk deepens, a cold horn sounds—\neverything lies within the empty city.",
+          "notes": [
+            "“Hu horses” refers to northern invading forces."
+          ]
+        },
+        {
+          "task_id": "g_b1d7811e4ffe36fb82e8",
+          "poem_id": "song_06",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "xccc6f1bd205d55",
+          "available": true,
+          "translation": "Since the northern horsemen probed the river and withdrew,\nruined pools and towering trees\nstill loathe the talk of war.\n\nDusk deepens. A chill horn sounds;\nits notes drift through the empty city.",
+          "notes": []
+        },
+        {
+          "task_id": "g_e03ad9bbaefb67a5da0f",
+          "poem_id": "song_06",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "xea5e6b6b11905c",
+          "available": true,
+          "translation": "Since northern horsemen threatened the river,\nthe ruined ponds, the towering trees\nstill loathe the talk of war.\nDusk gathers;\na clear horn blows a chill\nthrough the empty city.",
+          "notes": []
+        },
+        {
+          "task_id": "g_b3104ea3ab179b7b69f9",
+          "poem_id": "song_06",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "x2ff712d3eff105",
+          "available": true,
+          "translation": "Since the northern horses came probing south across the river and withdrew,\nthe ruined ponds and towering trees still loathe the talk of war.\nDusk deepens; a clear bugle sounds its chill—\nall of it in the empty city.",
+          "notes": []
+        },
+        {
+          "task_id": "g_98d8dd5ad0fd901c2c53",
+          "poem_id": "song_06",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "x441a534a88efed",
+          "available": true,
+          "translation": "Since the northern horsemen came to spy upon the river and withdrew,\nEven the ruined pools and towering trees\nStill loathe the talk of war.\nDusk gathers; a clear horn sounds the cold—\nAll through the empty city.",
+          "notes": []
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "song_06__r0__b01",
+      "split": "test",
+      "poem_id": "song_06",
+      "genre": "song_ci",
+      "repetition": 0,
+      "batch_number": 1,
+      "items": [
+        {
+          "task_id": "g_0f621f012538ec5447f9",
+          "poem_id": "song_06",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "x255c3f33c244d7",
+          "available": true,
+          "translation": "Since the northern horses came to spy upon the river and withdrew,\nruined ponds and towering trees still loathe the mention of war.\nDusk slowly deepens; the mournful horn blows cold—\nall of it in an empty city.",
+          "notes": []
+        },
+        {
+          "task_id": "g_2d2cf2cd680c600dd0b4",
+          "poem_id": "song_06",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "xb5e1fbba2e2bb2",
+          "available": true,
+          "translation": "Since the barbarian horsemen withdrew from the river,\nthe ruined pools and towering trees\nstill shrink from speaking of war.\n\nDusk deepens.\nCold horns sound,\nand all is silence in the empty city.",
+          "notes": []
+        },
+        {
+          "task_id": "g_ee85d84c12ae0f1e463a",
+          "poem_id": "song_06",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "xefa917bcb64c36",
+          "available": true,
+          "translation": "Since the northern cavalry withdrew after threatening the river,\nthe ruined ponds and towering trees\nstill loathe to speak of war.\nAs dusk slowly falls,\nthe clear horn blows its chill\nthroughout the empty city.",
+          "notes": []
+        },
+        {
+          "task_id": "g_0d192d5955407a4a7e37",
+          "poem_id": "song_06",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "x19f381a7d23fb2",
+          "available": true,
+          "translation": "Since the northern warhorses came probing south and withdrew,\nEven ruined pools and towering trees still loathe to speak of war.\nDusk deepens; a cold horn sounds—\nAll resounds through the empty city.",
+          "notes": []
+        },
+        {
+          "task_id": "g_48f2a5a35abecc212026",
+          "poem_id": "song_06",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "xed961260c278db",
+          "available": true,
+          "translation": "Since the northern horses came probing across the river and departed, the ruined pools and towering trees still loathe to speak of war.\nAs dusk deepens, a mournful horn blows cold; all of it fills the empty city.",
+          "notes": [
+            "“Northern horses” refers to invading forces."
+          ]
+        },
+        {
+          "task_id": "g_5b4fa0884b08c0d89ec5",
+          "poem_id": "song_06",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "x17c100376da0c8",
+          "available": true,
+          "translation": "Since enemy horsemen menaced the Yangtze and withdrew,\nthe ruined ponds and towering trees\nstill loathe all talk of war.\nDusk slowly gathers;\nclear horn calls breathe cold\nthrough the empty city.",
+          "notes": []
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "song_06__r0__b02",
+      "split": "test",
+      "poem_id": "song_06",
+      "genre": "song_ci",
+      "repetition": 0,
+      "batch_number": 2,
+      "items": [
+        {
+          "task_id": "g_8ba2a849341e19e7ca8a",
+          "poem_id": "song_06",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "x3c792848c941bb",
+          "available": true,
+          "translation": "Since the northern horsemen spied upon the river and withdrew,\nthe ruined pools and towering trees\nstill shrink from talk of war.\nDusk slowly gathers;\na clear horn blows the cold\nthrough the empty city.",
+          "notes": []
+        },
+        {
+          "task_id": "g_393282b917e2e85f1715",
+          "poem_id": "song_06",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "x782884f9410b42",
+          "available": true,
+          "translation": "Since the Hu cavalry withdrew after invading the riverbanks,\nthe ruined pools and lofty trees still loathe to speak of war.\nAs dusk slowly falls, a mournful horn sounds through the cold—\nall of it within the empty city.",
+          "notes": [
+            "“Hu” refers broadly to northern/foreign cavalry in classical Chinese usage.",
+            "“清角” is a clear, mournful military horn."
+          ]
+        },
+        {
+          "task_id": "g_2cde2d22b411f40e4f5c",
+          "poem_id": "song_06",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "x8878260bac3612",
+          "available": true,
+          "translation": "Since northern horsemen eyed the river\nand withdrew,\nthe ruined pools, the towering trees\nstill shudder at the talk of war.\n\nDusk gathers slowly.\nA clear horn blows the cold—\nall in the empty city.",
+          "notes": []
+        },
+        {
+          "task_id": "g_b101db677711f57fa71d",
+          "poem_id": "song_06",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "xd4c0df056fc509",
+          "available": true,
+          "translation": "Since the northern horsemen came probing south to the river and withdrew, the ruined ponds and towering trees still seem to loathe any talk of war.\nDusk deepens. A clear, cold horn sounds; all of it echoes through the empty city.",
+          "notes": []
+        },
+        {
+          "task_id": "g_e80e9afa920f9f6a24ab",
+          "poem_id": "song_06",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "x13da791956f8fd",
+          "available": true,
+          "translation": "Since the Hu horsemen withdrew from the river,\nthe ruined pools and towering trees\nstill loathe to speak of war.\n\nDusk deepens. A cold horn sounds—\neverywhere, through the empty city.",
+          "notes": []
+        },
+        {
+          "task_id": "g_acededc86ada2b3e6b30",
+          "poem_id": "song_06",
+          "split": "test",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "xc9edd6035ccd78",
+          "available": true,
+          "translation": "Since the northern horsemen threatened the river and withdrew,\nthe ruined ponds and towering trees\nstill shrink from talk of war.\nDusk slowly falls;\na clear horn blows the cold\nthrough the empty city.",
+          "notes": [
+            "The horsemen are invading cavalry; the river is the Yangtze."
+          ]
+        }
+      ],
+      "available": true
+    }
+  ]
+}

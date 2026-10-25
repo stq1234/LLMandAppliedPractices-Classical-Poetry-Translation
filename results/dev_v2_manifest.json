@@ -1,0 +1,844 @@
+{
+  "manifest_version": 1,
+  "shuffle_seed": 20261025,
+  "generation": {
+    "models": [
+      "gpt-6.1-sol",
+      "gpt-6-luna",
+      "gpt-5.6-luna"
+    ],
+    "conditions": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "repetitions": 1,
+    "max_completion_tokens": 2048,
+    "reasoning_effort": "low",
+    "temperature": "omitted",
+    "top_p": "omitted"
+  },
+  "prompt_spec": {
+    "common_instructions": "Return exactly one JSON object with the keys \"translation\" and \"notes\". \"translation\" must be a string containing only the English poem translation, with no title and no extra poem or factual material. \"notes\" must be an array of zero to two concise strings. Keep the translation to at most 120 English words and all notes combined to at most 60 English words. Preserve the poem's core meaning, images, and emotional direction; do not invent facts. Do not add commentary outside the JSON object.",
+    "condition_instructions": {
+      "A": "Translate the following Chinese poem into English.",
+      "B": "Act as a literary translator. Translate the Chinese poem into expressive, natural English with poetic language while preserving what the source says.",
+      "C": "Translate for an English-only reader who does not know Chinese. Keep the translation faithful while preserving the poem's core meaning, imagery, and tone. You may use up to two brief notes for context that is needed to understand the poem.",
+      "D": "Translate for English poetry reading aloud. You may adjust rhythm and restructure lines for an effective English poem, while preserving the poem's core meaning and emotional direction and adding no facts. You may use up to two brief notes for context.",
+      "E": "Translate for an English-only reader who does not know Chinese. Keep the translation faithful while preserving the poem's core meaning, imagery, and tone. You may use up to two brief notes for context that is needed to understand the poem. Consider the supplied semantic notes as source interpretation, not as text to copy.",
+      "F": "Translate for English poetry reading aloud. You may adjust rhythm and restructure lines for an effective English poem, while preserving the poem's core meaning and emotional direction and adding no facts. You may use up to two brief notes for context. Consider the supplied semantic notes as source interpretation, not as text to copy."
+    },
+    "output_format_reminder": "Output format reminder: return a JSON object with both keys \"translation\" and \"notes\"; do not return a bare poem or prose outside JSON. Example with two verse lines: {\"translation\":\"Line one\\nLine two\",\"notes\":[]} . The backslash-n shown here must encode a line break inside the JSON string; do not put a literal line break inside a quoted JSON string."
+  },
+  "poems": {
+    "tang_01": {
+      "id": "tang_01",
+      "split": "dev",
+      "genre": "tang_shi",
+      "author": "杜牧",
+      "title": "赠别二首·其二",
+      "text": "多情却似总无情，\n唯觉尊前笑不成。\n蜡烛有心还惜别，\n替人垂泪到天明。",
+      "source_url": "https://zh.wikisource.org/zh-hans/贈別二首_(杜牧)",
+      "source_text_note": "据《赠别二首》页面“其二”全文；保留页面主读“唯觉尊前”，未取“但觉”异文；繁体字转为简体。",
+      "semantic_notes": "惜别之情深，反而在酒席前笑不出来；随后把烛火写作有心惜别、代人流泪至天明。前两句的情绪反差与后两句的托物写情并置。“笑不成”没有明示主语，可理解为席间离别者，不将人物身份或视角限定为单一读法。",
+      "critical_units": [
+        {
+          "id": "tang_01_u1",
+          "source_span": "多情却似总无情",
+          "meaning": "深情在表面上呈现为仿佛无情，构成反常的情绪转折。"
+        },
+        {
+          "id": "tang_01_u2",
+          "source_span": "尊前笑不成",
+          "meaning": "临别席前笑不出来，句中人物主语省略。"
+        },
+        {
+          "id": "tang_01_u3",
+          "source_span": "蜡烛有心",
+          "meaning": "将烛写成具有惜别心意的对象。"
+        },
+        {
+          "id": "tang_01_u4",
+          "source_span": "替人垂泪到天明",
+          "meaning": "以烛泪代写离别者彻夜不止的泪意。"
+        }
+      ],
+      "phenomena": [
+        "情感反转",
+        "拟人",
+        "主语省略",
+        "借物抒情"
+      ]
+    },
+    "tang_02": {
+      "id": "tang_02",
+      "split": "dev",
+      "genre": "tang_shi",
+      "author": "李商隐",
+      "title": "夜雨寄北",
+      "text": "君问归期未有期，\n巴山夜雨涨秋池。\n何当共剪西窗烛，\n却话巴山夜雨时。",
+      "source_url": "https://zh.wikisource.org/wiki/夜雨寄北",
+      "source_text_note": "据《夜雨寄北》页面所列《李义山诗集（四部丛刊本）》等收录文本；采用“何当”主读，不取“何时”异文；繁体字转为简体。",
+      "semantic_notes": "诗中先写有人询问归期而答复未定，再落到巴山夜雨涨满秋池的眼前景象；后两句转向设想将来相聚时回谈此刻的雨夜。诗没有说明“君”的身份或性别，也不把设想当作已经发生的事实。",
+      "critical_units": [
+        {
+          "id": "tang_02_u1",
+          "source_span": "君问归期未有期",
+          "meaning": "询问归期却没有可确定的日期；对话双方身份未展开。"
+        },
+        {
+          "id": "tang_02_u2",
+          "source_span": "巴山夜雨涨秋池",
+          "meaning": "以当地秋夜雨势和水涨写当前处境。"
+        },
+        {
+          "id": "tang_02_u3",
+          "source_span": "何当共剪西窗烛",
+          "meaning": "盼望将来共同相聚，具体相聚时间未定。"
+        },
+        {
+          "id": "tang_02_u4",
+          "source_span": "却话巴山夜雨时",
+          "meaning": "设想未来回头谈论眼下的巴山雨夜，形成时间视角转换。"
+        }
+      ],
+      "phenomena": [
+        "时间视角转换",
+        "情感反转",
+        "文化意象",
+        "主语省略"
+      ]
+    },
+    "song_01": {
+      "id": "song_01",
+      "split": "dev",
+      "genre": "song_ci",
+      "author": "苏轼",
+      "title": "江城子·乙卯正月二十日夜记梦",
+      "text": "十年生死两茫茫，\n不思量，自难忘。\n千里孤坟，无处话凄凉。",
+      "source_url": "https://zh.wikisource.org/zh-hans/江城子_(苏轼)/江城子_(乙卯正月二十日夜记梦)",
+      "source_text_note": "取《东坡全集》所收词开篇四个短句，为连续的自足片段；简体字和标点按页面正文整理。",
+      "semantic_notes": "词中写十年生死相隔，称自己即使不刻意思量也自然难忘；千里之外的孤坟使凄凉无处诉说。“不思量”与“自难忘”并置，强调记忆并非完全由意志控制；片段未明示被思念者的身份。",
+      "critical_units": [
+        {
+          "id": "song_01_u1",
+          "source_span": "十年生死两茫茫",
+          "meaning": "以十年和生死相隔概括漫长离别。"
+        },
+        {
+          "id": "song_01_u2",
+          "source_span": "不思量，自难忘",
+          "meaning": "有意不去想与自然无法忘却并置。"
+        },
+        {
+          "id": "song_01_u3",
+          "source_span": "千里孤坟",
+          "meaning": "以远隔千里的孤坟具体化生死距离。"
+        },
+        {
+          "id": "song_01_u4",
+          "source_span": "无处话凄凉",
+          "meaning": "表达凄凉无从倾诉，未限定倾诉地点或对象。"
+        }
+      ],
+      "phenomena": [
+        "情感反转",
+        "主语省略",
+        "文化意象",
+        "语义歧义"
+      ]
+    },
+    "song_02": {
+      "id": "song_02",
+      "split": "dev",
+      "genre": "song_ci",
+      "author": "晏殊",
+      "title": "浣溪沙·一曲新词酒一杯",
+      "text": "一曲新词酒一杯，\n去年天气旧亭台。\n夕阳西下几时回？\n无可奈何花落去，\n似曾相识燕归来。\n小园香径独徘徊。",
+      "source_url": "https://zh.wikisource.org/wiki/浣溪沙_(晏殊)",
+      "source_text_note": "据《浣溪沙（一曲新词酒一杯）》全文；保留页面主读，按六句分行并转为简体。",
+      "semantic_notes": "新词与酒引出旧日亭台和去年的天气，夕阳西下后发问何时再回；花落令人无奈，归燕却带来似曾相识之感。结尾写人在小园独自徘徊，重复出现的季候景象与无法挽回的流逝并存。",
+      "critical_units": [
+        {
+          "id": "song_02_u1",
+          "source_span": "去年天气旧亭台",
+          "meaning": "眼前景物牵出对去年时日的回想。"
+        },
+        {
+          "id": "song_02_u2",
+          "source_span": "夕阳西下几时回",
+          "meaning": "借日落发问逝去时光何时能返。"
+        },
+        {
+          "id": "song_02_u3",
+          "source_span": "无可奈何花落去",
+          "meaning": "面对花落和春光消逝感到无力挽留。"
+        },
+        {
+          "id": "song_02_u4",
+          "source_span": "似曾相识燕归来",
+          "meaning": "归燕带来熟悉感，与花落不可逆形成对照。"
+        }
+      ],
+      "phenomena": [
+        "情感反转",
+        "时间视角转换",
+        "意象并置",
+        "主语省略"
+      ]
+    }
+  },
+  "tasks": [
+    {
+      "task_id": "g_f1c3e50fc7bbdf907cf4",
+      "poem_id": "tang_02",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6.1-sol",
+      "condition": "B",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_ca4de427c6a950160ac2",
+      "poem_id": "song_02",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-5.6-luna",
+      "condition": "C",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_5ee384b7bbad3491ac59",
+      "poem_id": "tang_01",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6.1-sol",
+      "condition": "A",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_8f18cc24f84cbab4d622",
+      "poem_id": "tang_01",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-5.6-luna",
+      "condition": "D",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_f93659009a4561a9a0ff",
+      "poem_id": "song_01",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6-luna",
+      "condition": "B",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_80d425345041d59f9e10",
+      "poem_id": "song_02",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-5.6-luna",
+      "condition": "B",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_f0c0d17849e9c11e61f0",
+      "poem_id": "tang_02",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6-luna",
+      "condition": "F",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_7b156adecf47e1cc5b03",
+      "poem_id": "song_01",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6-luna",
+      "condition": "A",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_0a7392f4d2562c408057",
+      "poem_id": "song_01",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-5.6-luna",
+      "condition": "D",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_e9a339d2156b89e372cb",
+      "poem_id": "song_01",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6-luna",
+      "condition": "D",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_5e2b8c312608a735a470",
+      "poem_id": "tang_02",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-5.6-luna",
+      "condition": "F",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_502741d4dd03a4da0ba2",
+      "poem_id": "song_02",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6.1-sol",
+      "condition": "B",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_ab68d1a974141ace16a1",
+      "poem_id": "tang_02",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-5.6-luna",
+      "condition": "D",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_0b5e75116a6f02165613",
+      "poem_id": "song_01",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-5.6-luna",
+      "condition": "F",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_d07961d4196f4c8a4c68",
+      "poem_id": "tang_02",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-5.6-luna",
+      "condition": "E",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_97e00696b5cad3b786cb",
+      "poem_id": "song_01",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6.1-sol",
+      "condition": "F",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_8fae3a193536a831cc8f",
+      "poem_id": "tang_02",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6.1-sol",
+      "condition": "F",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_b686f3742e15c2841653",
+      "poem_id": "song_02",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-5.6-luna",
+      "condition": "A",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_66dc2e55e63165134fb3",
+      "poem_id": "tang_01",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6-luna",
+      "condition": "F",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_9207fe6d6fefab7c8562",
+      "poem_id": "tang_02",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-5.6-luna",
+      "condition": "C",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_ad8d4ce6285c77759d2f",
+      "poem_id": "song_02",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6.1-sol",
+      "condition": "D",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_3d09041e5f34c542c920",
+      "poem_id": "tang_02",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6-luna",
+      "condition": "D",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_d991d95ca0e8c94abc40",
+      "poem_id": "song_02",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6-luna",
+      "condition": "F",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_f7e1d0af68018058c6b3",
+      "poem_id": "song_01",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6.1-sol",
+      "condition": "A",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_bc301e0f0bb77ee21cdf",
+      "poem_id": "tang_01",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6-luna",
+      "condition": "E",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_c7b3a1b90acb8893fa7a",
+      "poem_id": "song_02",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6-luna",
+      "condition": "D",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_a207736476c345112a76",
+      "poem_id": "song_02",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6-luna",
+      "condition": "A",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_837fe17cdf47499dc730",
+      "poem_id": "tang_01",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-5.6-luna",
+      "condition": "C",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_f24f466f82ebdfd4bc3f",
+      "poem_id": "tang_01",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-5.6-luna",
+      "condition": "F",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_9550ac6e53c7a421e534",
+      "poem_id": "tang_01",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-5.6-luna",
+      "condition": "A",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_57776895a4cd50d3e318",
+      "poem_id": "tang_01",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6-luna",
+      "condition": "B",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_ce3c9bfa3b342255a8b2",
+      "poem_id": "tang_02",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6.1-sol",
+      "condition": "C",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_3eb1bf0266b3a07c80c4",
+      "poem_id": "tang_01",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6.1-sol",
+      "condition": "B",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_a0c138c27e296e92b589",
+      "poem_id": "song_02",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6-luna",
+      "condition": "C",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_a0f448fe96ce375d31c5",
+      "poem_id": "tang_02",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-5.6-luna",
+      "condition": "B",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_9116b015964159d4103f",
+      "poem_id": "tang_01",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-5.6-luna",
+      "condition": "B",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_1c5e3629c6a19b183936",
+      "poem_id": "song_02",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6-luna",
+      "condition": "E",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_c00f40696cf2d8be09bd",
+      "poem_id": "tang_02",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6-luna",
+      "condition": "C",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_2f8f13974ada752a2775",
+      "poem_id": "tang_01",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-5.6-luna",
+      "condition": "E",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_56f37b6c2c7b5660cb05",
+      "poem_id": "song_01",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6-luna",
+      "condition": "F",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_700a076883c2dec533c3",
+      "poem_id": "tang_01",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6-luna",
+      "condition": "A",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_3e9f5240e322324d3490",
+      "poem_id": "song_02",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6.1-sol",
+      "condition": "E",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_264cfe1c27d4b1d0b8d1",
+      "poem_id": "song_02",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-5.6-luna",
+      "condition": "F",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_bcda2f7c5be3986bbcf2",
+      "poem_id": "song_01",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6.1-sol",
+      "condition": "C",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_ac3a7be3fe0ffbb78532",
+      "poem_id": "tang_01",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6.1-sol",
+      "condition": "C",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_74b411aa45f6cd449603",
+      "poem_id": "song_01",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-5.6-luna",
+      "condition": "C",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_75e0c52e138338f61278",
+      "poem_id": "tang_02",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-5.6-luna",
+      "condition": "A",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_03e40ebe1611af194fbe",
+      "poem_id": "song_02",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6-luna",
+      "condition": "B",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_3f6e0bc6968a8220778b",
+      "poem_id": "tang_01",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6.1-sol",
+      "condition": "F",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_24da44d942dc4624f44e",
+      "poem_id": "song_01",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6.1-sol",
+      "condition": "D",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_832ad5dd1bf83a46b06a",
+      "poem_id": "song_01",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6.1-sol",
+      "condition": "B",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_bc74c1e9cdd3dd30217f",
+      "poem_id": "tang_02",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6.1-sol",
+      "condition": "E",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_8a37d855c025b09c573a",
+      "poem_id": "tang_01",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6.1-sol",
+      "condition": "E",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_fc564dcdf146d3c4647c",
+      "poem_id": "song_02",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-5.6-luna",
+      "condition": "E",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_e9e762c965f6c0c19e0f",
+      "poem_id": "song_01",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6.1-sol",
+      "condition": "E",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_fd995ac34c165bda69c9",
+      "poem_id": "tang_02",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6-luna",
+      "condition": "A",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_85102ac7f3d813e19812",
+      "poem_id": "song_02",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-5.6-luna",
+      "condition": "D",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_4864695448add6a014a6",
+      "poem_id": "tang_02",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6.1-sol",
+      "condition": "D",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_87506040be32fcba8c32",
+      "poem_id": "tang_01",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6.1-sol",
+      "condition": "D",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_39635c50051d6a348193",
+      "poem_id": "tang_01",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6-luna",
+      "condition": "C",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_444969816623922a1a51",
+      "poem_id": "song_02",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6.1-sol",
+      "condition": "F",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_4e6f3fd77af0bd2fa936",
+      "poem_id": "song_01",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6-luna",
+      "condition": "C",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_38cfa48f1f23c15bcbf2",
+      "poem_id": "song_01",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-5.6-luna",
+      "condition": "B",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_5321203e25f7f647353c",
+      "poem_id": "tang_02",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6.1-sol",
+      "condition": "A",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_a58783467daea97b0c84",
+      "poem_id": "song_01",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6-luna",
+      "condition": "E",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_598bb8e42dd9f13fbf4d",
+      "poem_id": "song_01",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-5.6-luna",
+      "condition": "E",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_cdcaf8e7ff126144451e",
+      "poem_id": "tang_01",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6-luna",
+      "condition": "D",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_23fa66e1369c4982083d",
+      "poem_id": "song_02",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6.1-sol",
+      "condition": "C",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_a45650ce369b8785c7d2",
+      "poem_id": "tang_02",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6-luna",
+      "condition": "B",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_65bf44f37a709c703006",
+      "poem_id": "tang_02",
+      "split": "dev",
+      "genre": "tang_shi",
+      "model": "gpt-6-luna",
+      "condition": "E",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_c4574a6492538f91ce0c",
+      "poem_id": "song_01",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-5.6-luna",
+      "condition": "A",
+      "repetition": 0
+    },
+    {
+      "task_id": "g_dd25bec794f422e74498",
+      "poem_id": "song_02",
+      "split": "dev",
+      "genre": "song_ci",
+      "model": "gpt-6.1-sol",
+      "condition": "A",
+      "repetition": 0
+    }
+  ]
+}

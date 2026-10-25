@@ -1,0 +1,50 @@
+{
+  "quote_match_policy": "whitespace_collapse_casefold_substring_v1",
+  "variants": {
+    "primary": {
+      "attempts": 157,
+      "unique_batches": 144,
+      "strict_valid_attempts": 144,
+      "normalized_valid_attempts": 144,
+      "strict_valid_batches": 144,
+      "accepted_batches": 144,
+      "recovered_batches": 0,
+      "selected_attempts_rejected_by_strict_policy": 0,
+      "selected_attempt_changed_batches": 0,
+      "selected_score_payload_changed_batches": 0,
+      "stored_strict_validation_mismatches": 0,
+      "unresolved_batches": [],
+      "quote_match_policy": "whitespace_collapse_casefold_substring_v1"
+    },
+    "secondary": {
+      "attempts": 59,
+      "unique_batches": 48,
+      "strict_valid_attempts": 45,
+      "normalized_valid_attempts": 56,
+      "strict_valid_batches": 45,
+      "accepted_batches": 48,
+      "recovered_batches": 3,
+      "selected_attempts_rejected_by_strict_policy": 5,
+      "selected_attempt_changed_batches": 2,
+      "selected_score_payload_changed_batches": 2,
+      "stored_strict_validation_mismatches": 0,
+      "unresolved_batches": [],
+      "quote_match_policy": "whitespace_collapse_casefold_substring_v1"
+    },
+    "reversed": {
+      "attempts": 17,
+      "unique_batches": 12,
+      "strict_valid_attempts": 12,
+      "normalized_valid_attempts": 12,
+      "strict_valid_batches": 12,
+      "accepted_batches": 12,
+      "recovered_batches": 0,
+      "selected_attempts_rejected_by_strict_policy": 0,
+      "selected_attempt_changed_batches": 0,
+      "selected_score_payload_changed_batches": 0,
+      "stored_strict_validation_mismatches": 0,
+      "unresolved_batches": [],
+      "quote_match_policy": "whitespace_collapse_casefold_substring_v1"
+    }
+  }
+}

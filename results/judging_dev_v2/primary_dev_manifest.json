@@ -1,0 +1,1204 @@
+{
+  "judge_plan_version": 1,
+  "variant": "primary",
+  "split": "dev",
+  "generation_manifest": "dev_v2_manifest.json",
+  "judge_model": "gpt-6.1-sol",
+  "judge_instructions": "Evaluate each English poem translation against the supplied Chinese source. Score each translation on six separate dimensions from 1 to 5 using integers only. The common anchors are: 1 = severe failure; 3 = broadly understandable or basically present but with clear defects; 5 = accurate or excellent for that dimension. Scores 2 and 4 are intermediate.\n\nDimensions: meaning = semantic accuracy and coverage; imagery = preservation and clarity of source images; tone = preservation of register and emotional direction; english = grammar, idiom, and fluency; faithful_fit = suitability as a faithful literary translation for an English-only reader; poetic_fit = effectiveness as an English poem, including rhythm and lineation. Consider the translation as the primary work. Notes may help only with faithful_fit; they must not compensate for material absent from the translation in the other dimensions or in critical-unit coverage. Do not reward length, the number of notes, or wording merely repeated between translation and notes. Do not infer which prompt, condition, or model produced an item.\n\nEnglish syntax may require an explicit subject or pronoun. A reasonable I/we/she or similar subject added to form a complete English sentence is not automatically an error. Penalize only unsupported specificity about identity, relationship, or a new event, and allow ambiguity where the Chinese source permits it.\n\nFor every critical unit, assign one status based on the translation: present (meaning accurately conveyed), partial (only some meaning conveyed), missing (not conveyed), or wrong (materially distorted). Give a short exact quote from the translation as evidence when possible; a note may be quoted only when it directly clarifies that unit. For a missing unit with no relevant excerpt, quote may be empty, but explanation must say what is absent. Every non-empty quote must be copied exactly from that item's translation or notes. Keep explanations concise.\n\nReturn exactly one JSON object, with no prose or code fence, in this schema:\n{\"evaluations\":[{\"opaque_id\":\"...\",\"scores\":{\"meaning\":1,\"imagery\":1,\"tone\":1,\"english\":1,\"faithful_fit\":1,\"poetic_fit\":1},\"critical_units\":[{\"id\":\"...\",\"status\":\"present\",\"quote\":\"...\",\"explanation\":\"...\"}]}]}\nInclude every supplied opaque_id exactly once. Include every supplied critical-unit id exactly once for each translation. Do not add dimensions, units, or items.",
+  "seed": 20261025,
+  "batch_size": 6,
+  "max_completion_tokens": 8192,
+  "reasoning_effort": "low",
+  "temperature": "omitted",
+  "top_p": "omitted",
+  "source_poems": {
+    "song_01": {
+      "text": "十年生死两茫茫，\n不思量，自难忘。\n千里孤坟，无处话凄凉。",
+      "critical_units": [
+        {
+          "id": "song_01_u1",
+          "source_span": "十年生死两茫茫",
+          "meaning": "以十年和生死相隔概括漫长离别。"
+        },
+        {
+          "id": "song_01_u2",
+          "source_span": "不思量，自难忘",
+          "meaning": "有意不去想与自然无法忘却并置。"
+        },
+        {
+          "id": "song_01_u3",
+          "source_span": "千里孤坟",
+          "meaning": "以远隔千里的孤坟具体化生死距离。"
+        },
+        {
+          "id": "song_01_u4",
+          "source_span": "无处话凄凉",
+          "meaning": "表达凄凉无从倾诉，未限定倾诉地点或对象。"
+        }
+      ]
+    },
+    "song_02": {
+      "text": "一曲新词酒一杯，\n去年天气旧亭台。\n夕阳西下几时回？\n无可奈何花落去，\n似曾相识燕归来。\n小园香径独徘徊。",
+      "critical_units": [
+        {
+          "id": "song_02_u1",
+          "source_span": "去年天气旧亭台",
+          "meaning": "眼前景物牵出对去年时日的回想。"
+        },
+        {
+          "id": "song_02_u2",
+          "source_span": "夕阳西下几时回",
+          "meaning": "借日落发问逝去时光何时能返。"
+        },
+        {
+          "id": "song_02_u3",
+          "source_span": "无可奈何花落去",
+          "meaning": "面对花落和春光消逝感到无力挽留。"
+        },
+        {
+          "id": "song_02_u4",
+          "source_span": "似曾相识燕归来",
+          "meaning": "归燕带来熟悉感，与花落不可逆形成对照。"
+        }
+      ]
+    },
+    "tang_01": {
+      "text": "多情却似总无情，\n唯觉尊前笑不成。\n蜡烛有心还惜别，\n替人垂泪到天明。",
+      "critical_units": [
+        {
+          "id": "tang_01_u1",
+          "source_span": "多情却似总无情",
+          "meaning": "深情在表面上呈现为仿佛无情，构成反常的情绪转折。"
+        },
+        {
+          "id": "tang_01_u2",
+          "source_span": "尊前笑不成",
+          "meaning": "临别席前笑不出来，句中人物主语省略。"
+        },
+        {
+          "id": "tang_01_u3",
+          "source_span": "蜡烛有心",
+          "meaning": "将烛写成具有惜别心意的对象。"
+        },
+        {
+          "id": "tang_01_u4",
+          "source_span": "替人垂泪到天明",
+          "meaning": "以烛泪代写离别者彻夜不止的泪意。"
+        }
+      ]
+    },
+    "tang_02": {
+      "text": "君问归期未有期，\n巴山夜雨涨秋池。\n何当共剪西窗烛，\n却话巴山夜雨时。",
+      "critical_units": [
+        {
+          "id": "tang_02_u1",
+          "source_span": "君问归期未有期",
+          "meaning": "询问归期却没有可确定的日期；对话双方身份未展开。"
+        },
+        {
+          "id": "tang_02_u2",
+          "source_span": "巴山夜雨涨秋池",
+          "meaning": "以当地秋夜雨势和水涨写当前处境。"
+        },
+        {
+          "id": "tang_02_u3",
+          "source_span": "何当共剪西窗烛",
+          "meaning": "盼望将来共同相聚，具体相聚时间未定。"
+        },
+        {
+          "id": "tang_02_u4",
+          "source_span": "却话巴山夜雨时",
+          "meaning": "设想未来回头谈论眼下的巴山雨夜，形成时间视角转换。"
+        }
+      ]
+    }
+  },
+  "batches": [
+    {
+      "batch_id": "song_01__r0__b00",
+      "split": "dev",
+      "poem_id": "song_01",
+      "genre": "song_ci",
+      "repetition": 0,
+      "batch_number": 0,
+      "items": [
+        {
+          "task_id": "g_74b411aa45f6cd449603",
+          "poem_id": "song_01",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "x0b6d09387813a4",
+          "available": true,
+          "translation": "Ten years between life and death—both lost in haze;\\nI try not to think of you, yet I cannot forget.\\nYour lonely grave lies a thousand miles away;\\nthere is nowhere to speak of this desolation.",
+          "notes": []
+        },
+        {
+          "task_id": "g_598bb8e42dd9f13fbf4d",
+          "poem_id": "song_01",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "x5629843390bc36",
+          "available": true,
+          "translation": "Ten years—between life and death, all is boundless and obscure.\nI do not try to think of you, yet I cannot forget.\nA lonely grave a thousand miles away;\nthere is no one with whom to share this desolation.",
+          "notes": [
+            "The poem does not specify who is being mourned."
+          ]
+        },
+        {
+          "task_id": "g_7b156adecf47e1cc5b03",
+          "poem_id": "song_01",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "x2ef99d0492066c",
+          "available": true,
+          "translation": "Ten years, in life and death, we are lost to each other.\nI do not call you to mind, yet I cannot forget.\nYour lonely grave lies a thousand miles away; nowhere can I speak of this desolation.",
+          "notes": []
+        },
+        {
+          "task_id": "g_f93659009a4561a9a0ff",
+          "poem_id": "song_01",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "x492e9fede6762c",
+          "available": true,
+          "translation": "Ten years—life and death, each beyond reach.\nI do not call you to mind; still, I cannot forget.\nYour lonely grave, a thousand miles away—\nnowhere to speak of this desolation.",
+          "notes": []
+        },
+        {
+          "task_id": "g_bcda2f7c5be3986bbcf2",
+          "poem_id": "song_01",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "xc08f018f4de0a2",
+          "available": true,
+          "translation": "Ten years—one living, one dead, both lost in boundless distance.\nEven when I do not think of you, I cannot forget.\nYour lonely grave, a thousand miles away—\nNowhere to speak of this desolation.",
+          "notes": []
+        },
+        {
+          "task_id": "g_38cfa48f1f23c15bcbf2",
+          "poem_id": "song_01",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "xa773170be9f29b",
+          "available": true,
+          "translation": "Ten years—living and dead, dimly far apart;\nI do not think of you, yet I cannot forget.\nYour lonely grave, a thousand miles away—\nwhere can I speak of this desolation?",
+          "notes": []
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "song_01__r0__b01",
+      "split": "dev",
+      "poem_id": "song_01",
+      "genre": "song_ci",
+      "repetition": 0,
+      "batch_number": 1,
+      "items": [
+        {
+          "task_id": "g_c4574a6492538f91ce0c",
+          "poem_id": "song_01",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "xba1d6639348555",
+          "available": true,
+          "translation": "Ten years—living and dead, each lost in mist;\nI do not think of you, yet I cannot forget.\nYour lonely grave, a thousand miles away—\nNowhere to speak of this desolation.",
+          "notes": []
+        },
+        {
+          "task_id": "g_56f37b6c2c7b5660cb05",
+          "poem_id": "song_01",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "x788cb3bb0f8107",
+          "available": true,
+          "translation": "Ten years apart in life and death—\nboth lost in a vastness beyond knowing.\nI do not summon you to mind;\nyet I cannot forget.\nA lonely grave, a thousand miles away—\nnowhere to speak of this desolation.",
+          "notes": []
+        },
+        {
+          "task_id": "g_e9a339d2156b89e372cb",
+          "poem_id": "song_01",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "xa55f08c85a5aaa",
+          "available": true,
+          "translation": "Ten years—between life and death, we are lost to each other.\nI try not to think of you, yet cannot forget.\nYour lonely grave, a thousand miles away—\nnowhere to speak of this desolation.",
+          "notes": []
+        },
+        {
+          "task_id": "g_97e00696b5cad3b786cb",
+          "poem_id": "song_01",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "xae6c5c18d7d984",
+          "available": true,
+          "translation": "Ten years—life and death, each lost to the other.\nI do not dwell on you;\nyet cannot forget.\nA thousand miles away, a solitary grave—\nnowhere to speak this desolation.",
+          "notes": []
+        },
+        {
+          "task_id": "g_0a7392f4d2562c408057",
+          "poem_id": "song_01",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "xbeae144233944f",
+          "available": true,
+          "translation": "Ten years—alive or dead, we are lost in vastness;\nI do not think of you, yet cannot forget.\nA thousand miles away, your lonely grave—\nnowhere to speak of this desolation.",
+          "notes": []
+        },
+        {
+          "task_id": "g_832ad5dd1bf83a46b06a",
+          "poem_id": "song_01",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "x2079e8d7d8fa00",
+          "available": true,
+          "translation": "Ten years, the living and the dead lost to each other.\nI do not dwell on you, yet cannot forget.\nA thousand miles away, your lonely grave—\nnowhere to speak of all this sorrow.",
+          "notes": []
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "song_01__r0__b02",
+      "split": "dev",
+      "poem_id": "song_01",
+      "genre": "song_ci",
+      "repetition": 0,
+      "batch_number": 2,
+      "items": [
+        {
+          "task_id": "g_f7e1d0af68018058c6b3",
+          "poem_id": "song_01",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "xbb89ff76e17e47",
+          "available": true,
+          "translation": "Ten years, the living and the dead, each lost to the other.\nThough I do not dwell on you, I cannot forget.\nA thousand miles away, your lonely grave—\nNowhere to speak of this desolation.",
+          "notes": []
+        },
+        {
+          "task_id": "g_4e6f3fd77af0bd2fa936",
+          "poem_id": "song_01",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "x1923661d9682ec",
+          "available": true,
+          "translation": "Ten years—life and death, each beyond the other’s reach.\nI do not summon you to mind, yet I cannot forget.\nYour lonely grave lies a thousand miles away; nowhere can I speak of this desolation.",
+          "notes": []
+        },
+        {
+          "task_id": "g_a58783467daea97b0c84",
+          "poem_id": "song_01",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "x4ad9958dc44729",
+          "available": true,
+          "translation": "Ten years between us, one living, one dead—both lost in the vastness.\nI do not summon you to mind, yet cannot forget.\nA lonely grave, a thousand miles away; nowhere to speak of this sorrow.",
+          "notes": []
+        },
+        {
+          "task_id": "g_24da44d942dc4624f44e",
+          "poem_id": "song_01",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "xae7557a1463cc5",
+          "available": true,
+          "translation": "Ten years—one living, one dead,\nboth lost in a boundless haze.\nThough I do not dwell on you,\nI cannot forget.\nA thousand miles away, your lonely grave—\nnowhere to speak my desolation.",
+          "notes": []
+        },
+        {
+          "task_id": "g_0b5e75116a6f02165613",
+          "poem_id": "song_01",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "x4895e3785b070a",
+          "available": true,
+          "translation": "Ten years—life and death, each lost in haze;\nI do not summon you, yet cannot forget.\nA lone grave a thousand miles away—\nnowhere to speak of this desolation.",
+          "notes": []
+        },
+        {
+          "task_id": "g_e9e762c965f6c0c19e0f",
+          "poem_id": "song_01",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "x7240ca797d1883",
+          "available": true,
+          "translation": "For ten years, life and death have kept us apart, each lost to the other.\nEven when I do not think of you, I cannot forget.\nA lonely grave a thousand miles away—\nnowhere to speak of this desolation.",
+          "notes": []
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "song_02__r0__b00",
+      "split": "dev",
+      "poem_id": "song_02",
+      "genre": "song_ci",
+      "repetition": 0,
+      "batch_number": 0,
+      "items": [
+        {
+          "task_id": "g_ca4de427c6a950160ac2",
+          "poem_id": "song_02",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "x6d597f4d68c1e7",
+          "available": true,
+          "translation": "A new song, a cup of wine—\nLast year’s weather, the old pavilion.\nWhen will the setting sun return?\nHelplessly, the flowers fall away;\nAs if familiar, the swallows return.\nAlone, I wander the fragrant garden path.",
+          "notes": []
+        },
+        {
+          "task_id": "g_1c5e3629c6a19b183936",
+          "poem_id": "song_02",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "xf3795ff1ba497f",
+          "available": true,
+          "translation": "A new song, a cup of wine;\\nLast year’s weather, the old pavilion.\\nThe sun sinks in the west—when will it return?\\nHelplessly, the blossoms fall away;\\nAs if we’ve met before, the swallows return.\\nAlone, I pace the fragrant path in the little garden.",
+          "notes": []
+        },
+        {
+          "task_id": "g_85102ac7f3d813e19812",
+          "poem_id": "song_02",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "xf8893f2f3a1a11",
+          "available": true,
+          "translation": "A new song, a cup of wine—\nLast year’s weather, the old pavilion.\nWhen will the setting sun return?\nHelpless, I watch the blossoms fall;\nFamiliar swallows come again.\nAlone, I wander the fragrant garden path.",
+          "notes": []
+        },
+        {
+          "task_id": "g_a207736476c345112a76",
+          "poem_id": "song_02",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "x2ffda56571564e",
+          "available": true,
+          "translation": "A new song, a cup of wine;\nLast year’s weather, the old pavilion.\nWhen will the setting sun return?\nPowerless to stop the flowers from falling,\nSwallows return, familiar as if from before.\nAlone, I pace the fragrant path in the little garden.",
+          "notes": []
+        },
+        {
+          "task_id": "g_03e40ebe1611af194fbe",
+          "poem_id": "song_02",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "x7f69f361c9aae3",
+          "available": true,
+          "translation": "A new song, a cup of wine;\nLast year’s weather, the old pavilion.\nHow soon will the setting sun return?\nHelpless, the flowers fall away;\nFamiliar, it seems, the swallows come again.\nAlone, I wander the fragrant path of the little garden.",
+          "notes": []
+        },
+        {
+          "task_id": "g_502741d4dd03a4da0ba2",
+          "poem_id": "song_02",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "xeb629cd2404c13",
+          "available": true,
+          "translation": "A song of new-made words, a cup of wine;\nLast year’s weather, the same old pavilions.\nThe sun sinks west—when will it return?\nNothing can stop the flowers falling away;\nAs if known before, the swallows return.\nAlone I linger on the small garden’s fragrant path.",
+          "notes": []
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "song_02__r0__b01",
+      "split": "dev",
+      "poem_id": "song_02",
+      "genre": "song_ci",
+      "repetition": 0,
+      "batch_number": 1,
+      "items": [
+        {
+          "task_id": "g_ad8d4ce6285c77759d2f",
+          "poem_id": "song_02",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "x083cf6c1ce5bb0",
+          "available": true,
+          "translation": "A song of new words, a cup of wine;\nLast year’s weather, the same old pavilion.\nThe sun sinks west—when will it return?\nNothing can stop the flowers falling;\nThe swallows return, as though seen before.\nAlone I linger on the small garden’s fragrant path.",
+          "notes": []
+        },
+        {
+          "task_id": "g_444969816623922a1a51",
+          "poem_id": "song_02",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "x6ab25b563f68bb",
+          "available": true,
+          "translation": "A song with new words, a cup of wine;\nLast year's weather, the same old terraces.\nThe sun sinks west—when will it return?\nNothing can stop the flowers from falling;\nThe swallows return, as though known long before.\nAlone, I wander the small garden's fragrant path.",
+          "notes": []
+        },
+        {
+          "task_id": "g_3e9f5240e322324d3490",
+          "poem_id": "song_02",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "x7423852a66063f",
+          "available": true,
+          "translation": "A new song, a cup of wine;\nLast year's weather, the same old pavilion.\nThe sun sinks west—when will it return?\nHelpless, I watch the blossoms fall;\nThe swallows return, as though known before.\nAlone I wander the little garden's fragrant path.",
+          "notes": []
+        },
+        {
+          "task_id": "g_264cfe1c27d4b1d0b8d1",
+          "poem_id": "song_02",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "x9042d4f8f94182",
+          "available": true,
+          "translation": "A new song, a cup of wine—\nthe old pavilion, last year’s weather.\nAs the sun sinks westward, when will it return?\nHelplessly, the flowers fall away;\nlike old acquaintances, the swallows come home.\nAlong the scented path in the little garden,\nI wander alone.",
+          "notes": []
+        },
+        {
+          "task_id": "g_d991d95ca0e8c94abc40",
+          "poem_id": "song_02",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "x4bbc8452a73242",
+          "available": true,
+          "translation": "A new song, a cup of wine;\nLast year’s weather, the old pavilion.\nThe sun sets in the west—when will it return?\nFlowers fall; there is no holding them back.\nThe swallows return, as if I knew them once.\nAlone, I wander the scented path in the little garden.",
+          "notes": []
+        },
+        {
+          "task_id": "g_23fa66e1369c4982083d",
+          "poem_id": "song_02",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "x43edcc5d5ec1f8",
+          "available": true,
+          "translation": "A song with newly written words, a cup of wine;\nThe weather as it was last year, the same old terraces and pavilions.\nThe sun sinks in the west—when will it return?\nNothing can be done: the blossoms fall away;\nAs if known before, the swallows return.\nAlone I linger on the fragrant path in the little garden.",
+          "notes": []
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "song_02__r0__b02",
+      "split": "dev",
+      "poem_id": "song_02",
+      "genre": "song_ci",
+      "repetition": 0,
+      "batch_number": 2,
+      "items": [
+        {
+          "task_id": "g_fc564dcdf146d3c4647c",
+          "poem_id": "song_02",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "xd2055d2759223f",
+          "available": true,
+          "translation": "A new song, a cup of wine—\nLast year’s weather, the old pavilion.\nAs the sun sets in the west, when will it return?\nHelplessly, the flowers fall away;\nThe returning swallows seem somehow familiar.\nAlong the fragrant path in the little garden,\nI wander alone.",
+          "notes": []
+        },
+        {
+          "task_id": "g_a0c138c27e296e92b589",
+          "poem_id": "song_02",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "x15033d085f03ee",
+          "available": true,
+          "translation": "With a new song and a cup of wine,\nThe weather and pavilion are as they were last year.\nWhen will the setting sun return?\nHelplessly, blossoms fall away;\nAs if we knew them, swallows come back.\nAlone, I wander the garden’s fragrant path.",
+          "notes": []
+        },
+        {
+          "task_id": "g_c7b3a1b90acb8893fa7a",
+          "poem_id": "song_02",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6-luna",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "x74d98bea551a14",
+          "available": true,
+          "translation": "A new song, a cup of wine—\nlast year’s weather, the old pavilion.\nThe setting sun sinks west; when will it return?\nHelplessly, the blossoms fall away;\nseeming familiar, the swallows come again.\nAlone, I wander the fragrant garden path.",
+          "notes": []
+        },
+        {
+          "task_id": "g_dd25bec794f422e74498",
+          "poem_id": "song_02",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-6.1-sol",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "xc39cac45562984",
+          "available": true,
+          "translation": "A new song’s words, a cup of wine;\nLast year’s weather, the same old pavilion.\nThe sun sinks west—when will it return?\nHelpless, I watch the blossoms fall;\nAs if once known, the swallows come again.\nAlone I wander the small garden’s fragrant path.",
+          "notes": []
+        },
+        {
+          "task_id": "g_80d425345041d59f9e10",
+          "poem_id": "song_02",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "x2f282a5b98f975",
+          "available": true,
+          "translation": "A new song, a cup of wine—\nLast year’s weather, the old pavilion.\nWhen will the setting sun return?\nHelplessly, the flowers fall away;\nFamiliar swallows return once more.\nAlong the fragrant garden path, I wander alone.",
+          "notes": []
+        },
+        {
+          "task_id": "g_b686f3742e15c2841653",
+          "poem_id": "song_02",
+          "split": "dev",
+          "genre": "song_ci",
+          "model": "gpt-5.6-luna",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "xbac5ec68424abf",
+          "available": true,
+          "translation": "A new song, a cup of wine—\nLast year’s weather, the old pavilion.\nWhen will the setting sun return?\nHelplessly, the flowers fall away;\nSwallows return, seeming familiar.\nAlone, I wander the fragrant garden path.",
+          "notes": []
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "tang_01__r0__b00",
+      "split": "dev",
+      "poem_id": "tang_01",
+      "genre": "tang_shi",
+      "repetition": 0,
+      "batch_number": 0,
+      "items": [
+        {
+          "task_id": "g_5ee384b7bbad3491ac59",
+          "poem_id": "tang_01",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6.1-sol",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "x7d3aeaa4d1e9b2",
+          "available": true,
+          "translation": "So full of love, yet seeming without feeling,\nBefore the wine cup, I cannot bring myself to smile.\nThe candle, too, has a heart and grieves at parting,\nShedding tears for us until the dawn.",
+          "notes": [
+            "The candle’s “heart” also suggests its wick; its falling wax becomes tears of farewell."
+          ]
+        },
+        {
+          "task_id": "g_3eb1bf0266b3a07c80c4",
+          "poem_id": "tang_01",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6.1-sol",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "xde359dccdabc3d",
+          "available": true,
+          "translation": "So deep our love, yet we seem heartless still;\nBefore the wine cup, no smile will come.\nThe candle, too, has a heart and grieves at parting,\nShedding tears for us until the dawn.",
+          "notes": [
+            "The candle’s “heart” also suggests its wick; its melting wax becomes the lovers’ tears."
+          ]
+        },
+        {
+          "task_id": "g_57776895a4cd50d3e318",
+          "poem_id": "tang_01",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6-luna",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "x54f07751ae294c",
+          "available": true,
+          "translation": "So much love can seem like none at all;\nBefore the cup, I cannot force a smile.\nThe candle, too, has a tender heart for parting,\nAnd weeps for us until the break of day.",
+          "notes": []
+        },
+        {
+          "task_id": "g_9116b015964159d4103f",
+          "poem_id": "tang_01",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-5.6-luna",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "x1732a2bee688bb",
+          "available": true,
+          "translation": "So full of feeling, yet seeming without feeling,\nBefore the wine, I can only force a smile.\nThe candle, too, has a heart and pities our parting,\nShedding tears for us until dawn.",
+          "notes": []
+        },
+        {
+          "task_id": "g_87506040be32fcba8c32",
+          "poem_id": "tang_01",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6.1-sol",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "xf58a25c5e36a1f",
+          "available": true,
+          "translation": "So full of love, I seem to have none at all;\nBefore the wine cups, I cannot force a smile.\nThe candle has a heart—it too mourns parting,\nAnd sheds our tears for us till break of day.",
+          "notes": [
+            "The candle’s “heart” also suggests its wick; its dripping wax becomes the tears the lovers cannot shed."
+          ]
+        },
+        {
+          "task_id": "g_3f6e0bc6968a8220778b",
+          "poem_id": "tang_01",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6.1-sol",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "x08383aa13c7b89",
+          "available": true,
+          "translation": "So deep the feeling, it seems no feeling at all;\nBefore the wine cups, no smile will come.\nThe candle, too, has a heart that grieves at parting,\nAnd sheds tears in our stead until the dawn.",
+          "notes": []
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "tang_01__r0__b01",
+      "split": "dev",
+      "poem_id": "tang_01",
+      "genre": "tang_shi",
+      "repetition": 0,
+      "batch_number": 1,
+      "items": [
+        {
+          "task_id": "g_2f8f13974ada752a2775",
+          "poem_id": "tang_01",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-5.6-luna",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "xa97191543306dd",
+          "available": true,
+          "translation": "The most tender hearts can seem the most unfeeling;\\nBefore the wine cups, we find we cannot smile.\\nThe candles, mindful too, grieve this parting,\\nAnd shed tears for us until dawn.",
+          "notes": []
+        },
+        {
+          "task_id": "g_8a37d855c025b09c573a",
+          "poem_id": "tang_01",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6.1-sol",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "x56dd8e017501cc",
+          "available": true,
+          "translation": "So full of feeling, yet seeming without feeling;\nBefore the wine cups, no smile will come.\nThe candle, too, has a heart and grieves at parting,\nShedding tears for others until dawn.",
+          "notes": [
+            "The candle’s “heart” also suggests its wick; its falling wax becomes tears."
+          ]
+        },
+        {
+          "task_id": "g_9550ac6e53c7a421e534",
+          "poem_id": "tang_01",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-5.6-luna",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "xb634336a49e011",
+          "available": true,
+          "translation": "So full of feeling, yet seeming without feeling,\nBefore the wine cup, I can only fail to smile.\nThe candle, too, has a heart and pities our parting,\nShedding tears for us until the break of dawn.",
+          "notes": []
+        },
+        {
+          "task_id": "g_ac3a7be3fe0ffbb78532",
+          "poem_id": "tang_01",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6.1-sol",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "x6527f9d3c84894",
+          "available": true,
+          "translation": "So full of love, yet I seem utterly cold;\nBefore the wine cup, I cannot manage a smile.\nThe candle, too, has a heart and grieves at parting,\nShedding tears for us until the dawn.",
+          "notes": [
+            "The candle’s “heart” also means its wick; its dripping wax becomes tears of farewell."
+          ]
+        },
+        {
+          "task_id": "g_f24f466f82ebdfd4bc3f",
+          "poem_id": "tang_01",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-5.6-luna",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "xba12d321308550",
+          "available": true,
+          "translation": "Deeply moved, we seem devoid of feeling;\nBefore the wine, we cannot even smile.\nThe candle, knowing how to mourn parting,\nSheds tears for us until dawn.",
+          "notes": []
+        },
+        {
+          "task_id": "g_cdcaf8e7ff126144451e",
+          "poem_id": "tang_01",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6-luna",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "x7f681e6e3b921e",
+          "available": true,
+          "translation": "So full of love, yet seeming loveless still;\nBefore the wine, I cannot force a smile.\nThe candle, too, has a heart—it grieves to part,\nAnd weeps for us till morning’s light.",
+          "notes": []
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "tang_01__r0__b02",
+      "split": "dev",
+      "poem_id": "tang_01",
+      "genre": "tang_shi",
+      "repetition": 0,
+      "batch_number": 2,
+      "items": [
+        {
+          "task_id": "g_837fe17cdf47499dc730",
+          "poem_id": "tang_01",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-5.6-luna",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "x6ac30dee00e613",
+          "available": true,
+          "translation": "So full of feeling, yet seeming without feeling,\nI can only force a smile before the wine.\nThe candle, compassionate, pities our farewell,\nand sheds tears for us until dawn.",
+          "notes": [
+            "The candle’s melting wax is imagined as tears, sharing the sorrow of parting."
+          ]
+        },
+        {
+          "task_id": "g_66dc2e55e63165134fb3",
+          "poem_id": "tang_01",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6-luna",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "xf746c0e1f7fb4a",
+          "available": true,
+          "translation": "So deep in feeling, yet as if unfeeling—\nBefore the wine, no smile will come.\nThe candle, too, has a heart; it grieves to part,\nAnd sheds our tears till dawn.",
+          "notes": []
+        },
+        {
+          "task_id": "g_bc301e0f0bb77ee21cdf",
+          "poem_id": "tang_01",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6-luna",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "x6393f06fc376c4",
+          "available": true,
+          "translation": "Deep love can seem almost like indifference;\nAt the wine cup, a smile will not come.\nThe candle, too, has a heart and grieves to part,\nShedding tears for us until dawn.",
+          "notes": []
+        },
+        {
+          "task_id": "g_700a076883c2dec533c3",
+          "poem_id": "tang_01",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6-luna",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "x7f67eb4dda104f",
+          "available": true,
+          "translation": "So full of feeling, yet seeming wholly unfeeling,\nBefore the wine, I find I cannot smile.\nThe candle, too, has a heart and grieves our parting,\nWeeping for us till dawn.",
+          "notes": []
+        },
+        {
+          "task_id": "g_8f18cc24f84cbab4d622",
+          "poem_id": "tang_01",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-5.6-luna",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "xa69fd66e781222",
+          "available": true,
+          "translation": "So full of feeling, yet seeming without feeling,\nBefore the wine, I cannot force a smile.\nThe candle, grieving too, laments our parting,\nAnd sheds for us its tears till dawn.",
+          "notes": []
+        },
+        {
+          "task_id": "g_39635c50051d6a348193",
+          "poem_id": "tang_01",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6-luna",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "x52c30cb87f7163",
+          "available": true,
+          "translation": "So full of feeling, yet we seem devoid of feeling;\nBefore the wine, I can only manage a smile that fails.\nThe candle, too, has a heart and grieves our parting,\nWeeping for us until the break of dawn.",
+          "notes": []
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "tang_02__r0__b00",
+      "split": "dev",
+      "poem_id": "tang_02",
+      "genre": "tang_shi",
+      "repetition": 0,
+      "batch_number": 0,
+      "items": [
+        {
+          "task_id": "g_75e0c52e138338f61278",
+          "poem_id": "tang_02",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-5.6-luna",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "x912ec790f5018b",
+          "available": true,
+          "translation": "You ask when I will return, but no date has been set;\\nAt night in Ba Mountain, autumn rain swells the pool.\\nWhen shall we sit together, trimming the candle by the west window,\\nAnd speak again of this night of rain in Ba Mountain?",
+          "notes": []
+        },
+        {
+          "task_id": "g_ab68d1a974141ace16a1",
+          "poem_id": "tang_02",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-5.6-luna",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "xee018af7aa3155",
+          "available": true,
+          "translation": "You ask when I’ll return—no date is set;\nNight rain in Ba Mountain swells the autumn pool.\nWhen shall we sit by the western window,\nTrimming the candle, and speak of this night’s rain?",
+          "notes": []
+        },
+        {
+          "task_id": "g_c00f40696cf2d8be09bd",
+          "poem_id": "tang_02",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6-luna",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "xfda51f6a1f9b92",
+          "available": true,
+          "translation": "You ask when I’ll return; there is no date.  \nNight rain on Mount Ba swells the autumn pool.  \nWhen shall we trim the candle by the western window,  \nand speak again of this night’s rain on Mount Ba?",
+          "notes": []
+        },
+        {
+          "task_id": "g_8fae3a193536a831cc8f",
+          "poem_id": "tang_02",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6.1-sol",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "x459415c3b20c47",
+          "available": true,
+          "translation": "You ask when I’ll return—I cannot say.\nNight rain in the Ba hills swells the autumn pool.\nWhen shall we trim the candle by the western window,\nAnd talk of this night’s rain in the Ba hills?",
+          "notes": []
+        },
+        {
+          "task_id": "g_a0f448fe96ce375d31c5",
+          "poem_id": "tang_02",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-5.6-luna",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "x22e0dfeb915c21",
+          "available": true,
+          "translation": "You ask when I’ll return—there is no date;\nNight rain on Ba Mountain swells the autumn pool.\nWhen shall we sit together by the western window,\nTrimming the candle, and speak of this night’s rain?",
+          "notes": []
+        },
+        {
+          "task_id": "g_f1c3e50fc7bbdf907cf4",
+          "poem_id": "tang_02",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6.1-sol",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "x9aa503067b4aef",
+          "available": true,
+          "translation": "You ask when I’ll return; no date is known.\nNight rain in the Ba Mountains swells the autumn pool.\nWhen shall we sit together, trimming the candle by the western window,\nAnd speak again of this night’s rain in the Ba Mountains?",
+          "notes": []
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "tang_02__r0__b01",
+      "split": "dev",
+      "poem_id": "tang_02",
+      "genre": "tang_shi",
+      "repetition": 0,
+      "batch_number": 1,
+      "items": [
+        {
+          "task_id": "g_d07961d4196f4c8a4c68",
+          "poem_id": "tang_02",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-5.6-luna",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "x81fc3f9b93b0d6",
+          "available": true,
+          "translation": "You ask when I will return; no date has been set.\nIn Ba Mountain, night rain swells the autumn pools.\nWhen shall we sit together, trimming the west-window candle,\nand speak again of this night of rain in Ba Mountain?",
+          "notes": []
+        },
+        {
+          "task_id": "g_5e2b8c312608a735a470",
+          "poem_id": "tang_02",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-5.6-luna",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "x9d71f4d92a9497",
+          "available": true,
+          "translation": "You ask when I’ll return; I cannot say.\nIn Ba’s hills, night rain swells the autumn pool.\nWhen shall we sit, trimming candlewicks by the west window,\nand speak again of this night’s rain in Ba’s hills?",
+          "notes": []
+        },
+        {
+          "task_id": "g_f0c0d17849e9c11e61f0",
+          "poem_id": "tang_02",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6-luna",
+          "condition": "F",
+          "repetition": 0,
+          "opaque_id": "xdf13fc938e352e",
+          "available": true,
+          "translation": "You ask when I’ll return; no date is set.\nIn Ba Mountain’s night rain, autumn pools rise.\nWhen will we sit together, trimming the west window’s candle,\nAnd speak again of this night of rain in Ba Mountain?",
+          "notes": []
+        },
+        {
+          "task_id": "g_fd995ac34c165bda69c9",
+          "poem_id": "tang_02",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6-luna",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "x9d2b9e7977947b",
+          "available": true,
+          "translation": "You ask when I’ll return; no date is set.\nAt night, Ba Mountain rain swells the autumn pool.\nWhen shall we sit together, trimming the candle by the west window,\nand speak again of this night of rain on Ba Mountain?",
+          "notes": []
+        },
+        {
+          "task_id": "g_9207fe6d6fefab7c8562",
+          "poem_id": "tang_02",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-5.6-luna",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "x03c87c3508d4fc",
+          "available": true,
+          "translation": "You ask when I’ll return; I have no date to name.\nTonight in Ba Mountain, rain swells the autumn pools.\nWhen shall we sit together by the western window,\nTrimming the candlewick, and speak of this night’s rain in Ba Mountain?",
+          "notes": [
+            "Ba Mountain is a region in present-day Sichuan, China."
+          ]
+        },
+        {
+          "task_id": "g_bc74c1e9cdd3dd30217f",
+          "poem_id": "tang_02",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6.1-sol",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "xafd3e5cafc6858",
+          "available": true,
+          "translation": "You ask when I’ll return; I cannot say.\nNight rain in the Ba Mountains swells the autumn pool.\nWhen shall we trim the candle together by the west window,\nAnd talk again of this night’s rain in the Ba Mountains?",
+          "notes": [
+            "Trimming the candle’s wick suggests sitting together late into the night."
+          ]
+        }
+      ],
+      "available": true
+    },
+    {
+      "batch_id": "tang_02__r0__b02",
+      "split": "dev",
+      "poem_id": "tang_02",
+      "genre": "tang_shi",
+      "repetition": 0,
+      "batch_number": 2,
+      "items": [
+        {
+          "task_id": "g_5321203e25f7f647353c",
+          "poem_id": "tang_02",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6.1-sol",
+          "condition": "A",
+          "repetition": 0,
+          "opaque_id": "x384702e2ed76a3",
+          "available": true,
+          "translation": "You ask when I’ll return; no date is set.\nNight rain in the Ba Mountains swells the autumn pool.\nWhen shall we trim the candle by the western window together,\nAnd speak again of this night’s rain in the Ba Mountains?",
+          "notes": []
+        },
+        {
+          "task_id": "g_65bf44f37a709c703006",
+          "poem_id": "tang_02",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6-luna",
+          "condition": "E",
+          "repetition": 0,
+          "opaque_id": "xcc80180bd245eb",
+          "available": true,
+          "translation": "You ask when I’ll return; no date is set.\nIn Ba Mountain’s night rain, autumn ponds brim.\nWhen shall we trim the candle by the west window together,\nand speak again of this Ba Mountain rainy night?",
+          "notes": []
+        },
+        {
+          "task_id": "g_4864695448add6a014a6",
+          "poem_id": "tang_02",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6.1-sol",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "xe966b8a620ffe3",
+          "available": true,
+          "translation": "You ask when I’ll return. I cannot say.\nNight rain in the Ba hills swells the autumn pool.\nWhen shall we trim our candle by the western window\nAnd talk of this night’s rain in the Ba hills?",
+          "notes": []
+        },
+        {
+          "task_id": "g_ce3c9bfa3b342255a8b2",
+          "poem_id": "tang_02",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6.1-sol",
+          "condition": "C",
+          "repetition": 0,
+          "opaque_id": "xce3546a6efc4cd",
+          "available": true,
+          "translation": "You ask when I’ll return; no date is set.\nNight rain in the Ba Mountains swells the autumn pool.\nWhen shall we trim the candle together by the west window,\nAnd talk of this time of night rain in the Ba Mountains?",
+          "notes": []
+        },
+        {
+          "task_id": "g_3d09041e5f34c542c920",
+          "poem_id": "tang_02",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6-luna",
+          "condition": "D",
+          "repetition": 0,
+          "opaque_id": "x855161ef8055fd",
+          "available": true,
+          "translation": "You ask when I’ll return; there is no date.\nNight rain in the Ba hills swells the autumn pool.\nWhen shall we trim the candle by the west window,\nAnd speak again of this night’s rain in the Ba hills?",
+          "notes": []
+        },
+        {
+          "task_id": "g_a45650ce369b8785c7d2",
+          "poem_id": "tang_02",
+          "split": "dev",
+          "genre": "tang_shi",
+          "model": "gpt-6-luna",
+          "condition": "B",
+          "repetition": 0,
+          "opaque_id": "x771a0a20a70379",
+          "available": true,
+          "translation": "You ask when I’ll return; no date is set.\nNight rain on Mount Ba swells the autumn pool.\nWhen shall we sit together, trimming the west-window candle,\nand speak again of this night’s rain on Mount Ba?",
+          "notes": []
+        }
+      ],
+      "available": true
+    }
+  ]
+}
